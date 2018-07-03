@@ -1,0 +1,15 @@
+{
+	"monet": {
+		"json": "ad_content.json",
+        "title_type": "SINGLE_TITLE",
+        "manifest": {
+            "creativeName": "",
+            "agencyName": "Mediamonks",
+            "minTitles": 0,
+            "maxTitles": 0,
+            "rootAssets": {},
+            "assetGroups": {}
+        },
+        "validation": []
+	}
+}

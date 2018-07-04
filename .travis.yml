@@ -7,8 +7,19 @@ node_js:
 
 sudo: false
 
-script:
+#before_install:
+#  - yarn global add codeclimate-test-reporter
+
+before_deploy:
+  - cd dist
+
+#script:
 #  - yarn test
+
+after_script:
+  - npm run build # make a dist folder
+#  - codeclimate-test-reporter < coverage/lcov.info
+#  - node_modules/.bin/coveralls < coverage/lcov.info
 
 deploy:
   - provider: npm

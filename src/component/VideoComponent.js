@@ -1,6 +1,5 @@
 import Component from './Component';
-import ElementComponent from 'temple/component/ElementComponent';
-import loadText from '../util/loadText';
+import ElementComponent from './ElementComponent';
 
 export default class VideoComponent extends Component {
   constructor() {

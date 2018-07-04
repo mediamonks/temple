@@ -1,5 +1,5 @@
 import Component from './Component';
-import ElementComponent from 'temple/component/ElementComponent';
+import ElementComponent from './ElementComponent';
 import loadText from '../util/loadText';
 
 /**

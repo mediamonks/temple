@@ -1,5 +1,5 @@
 import Component from './Component';
-import ElementComponent from 'temple/component/ElementComponent';
+import ElementComponent from './ElementComponent';
 
 export default class RefsComponent extends Component {
   refs = {};

@@ -10,8 +10,6 @@ node_modules/
 /coverage/
 /.nyc_output/
 /tmp/
+/dist/
 
 ## only ignore in git
-/lib
-/index.js
-/index.d.ts

@@ -1,12 +1,12 @@
-# seng-boilerplate
+# Temple
 
-Add a description here...
+This is the Richmedia Temple, used for creating richmedia units for various vendors.
 
-[![Travis](https://img.shields.io/travis/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-boilerplate)
-[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate)
-[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master)
-[![npm](https://img.shields.io/npm/v/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
-[![npm](https://img.shields.io/npm/dm/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
+[![Travis](https://img.shields.io/travis/mediamonks/temple.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/temple)
+<!-- [![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate) -->
+<!-- [![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master) -->
+[![npm](https://img.shields.io/npm/v/temple.svg?maxAge=2592000)](https://www.npmjs.com/package/@mediamonks/temple)
+[![npm](https://img.shields.io/npm/dm/temple.svg?maxAge=2592000)](https://www.npmjs.com/package/@mediamonks/temple)
 
 ## Installation
 

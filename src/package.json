@@ -1,8 +1,10 @@
 {
-  "name": "",
+  "name": "@mediamonks/temple",
+  "version": "0.0.1",
   "description": "This is the Richmedia Temple, used for creating richmedia units for various vendors.",
+  "main": "index.js",
   "scripts": {
-    "docs": "node_modules/.bin/esdoc"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -14,9 +16,4 @@
     "url": "https://github.com/mediamonks/temple/issues"
   },
   "homepage": "https://github.com/mediamonks/temple#readme",
-  "devDependencies": {
-    "esdoc": "^1.1.0",
-    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
-    "esdoc-standard-plugin": "^1.0.0"
-  }
 }

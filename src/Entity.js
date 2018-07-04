@@ -6,7 +6,7 @@ import Component from './component/Component';
  */
 export default class Entity {
   /**
-   * Components, you can only add one component
+   * Components, you can only add one component of the same type
    * @type {{}}
    * @private
    */

@@ -17,6 +17,8 @@ import DoubleClickEventEnum from '../../event/DoubleClickEventEnum';
 // studio.events.StudioEvent.FULLSCREEN_COLLAPSE_FINISH
 
 export default class DoubleClickPlatformComponent extends PlatformComponent {
+  static requires = [EventDispatcherComponent];
+
   init() {
     return super
       .init()
@@ -67,11 +69,11 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
     e.addEventListener(se.VISIBLE, this.handleVisible);
   }
 
-	/**
-     *
-	 * @param {string} id
-	 * @param {HTMLVideoElement} videoElement
-	 */
+  /**
+   *
+   * @param {string} id
+   * @param {HTMLVideoElement} videoElement
+   */
   addVideoTracking(id, videoElement) {
     if (!studio.video) {
       Enabler.loadModule(studio.module.ModuleId.VIDEO, () => {

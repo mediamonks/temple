@@ -10,7 +10,7 @@ export default class ChainComponent extends Component {
   }
 
   chain = (func, params) => {
-    this._currentChain = this._currentChain.then(() => unc.call(this._entity, params));
+    this._currentChain = this._currentChain.then(() => func.call(this._entity, params));
 
     return this;
   };

@@ -1,9 +1,11 @@
 export default class Component {
   static requires = [];
 
+	/**
+     * @description When entity is initiaized
+	 * @return {Promise<void>}
+	 */
   init() {
-    console.log(Component.requires);
-
     return Promise.resolve();
   }
 

@@ -26,7 +26,6 @@ AUTHORS.md
 CONTRIBUTING.md
 tsconfig.json
 tslint.json
-/docs
 /example
 /src
 /test

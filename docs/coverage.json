@@ -1,0 +1,399 @@
+{
+  "coverage": "22.87%",
+  "expectCount": 188,
+  "actualCount": 43,
+  "files": {
+    "src/Entity.js": {
+      "expectCount": 14,
+      "actualCount": 11,
+      "undocumentLines": [
+        39,
+        43,
+        123
+      ]
+    },
+    "src/component/AutoEntityComponent.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        7,
+        11
+      ]
+    },
+    "src/component/ChainComponent.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        6,
+        12
+      ]
+    },
+    "src/component/Component.js": {
+      "expectCount": 11,
+      "actualCount": 8,
+      "undocumentLines": [
+        1,
+        2,
+        32
+      ]
+    },
+    "src/component/ConfigComponent.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        7,
+        10
+      ]
+    },
+    "src/component/ElementComponent.js": {
+      "expectCount": 5,
+      "actualCount": 1,
+      "undocumentLines": [
+        3,
+        4,
+        6,
+        9
+      ]
+    },
+    "src/component/EmbedSVGComponent.js": {
+      "expectCount": 4,
+      "actualCount": 1,
+      "undocumentLines": [
+        9,
+        13,
+        34
+      ]
+    },
+    "src/component/EventDispatcherComponent.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/component/ExpandableDoubleClickComponent.js": {
+      "expectCount": 16,
+      "actualCount": 0,
+      "undocumentLines": [
+        8,
+        9,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        29,
+        37,
+        56,
+        60,
+        64,
+        84,
+        101,
+        107
+      ]
+    },
+    "src/component/KnockoutComponent.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        6,
+        8,
+        11
+      ]
+    },
+    "src/component/RefsComponent.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        5,
+        7,
+        11,
+        28
+      ]
+    },
+    "src/component/VideoComponent.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        5,
+        9
+      ]
+    },
+    "src/component/platform/DoubleClickPlatformComponent.js": {
+      "expectCount": 24,
+      "actualCount": 11,
+      "undocumentLines": [
+        19,
+        20,
+        22,
+        31,
+        49,
+        96,
+        101,
+        123,
+        128,
+        157,
+        171,
+        185,
+        190
+      ]
+    },
+    "src/component/platform/MonetPlatformComponent.js": {
+      "expectCount": 10,
+      "actualCount": 3,
+      "undocumentLines": [
+        35,
+        38,
+        53,
+        114,
+        120,
+        150,
+        159
+      ]
+    },
+    "src/component/platform/PlatformComponent.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/event/EventDispatcher.js": {
+      "expectCount": 5,
+      "actualCount": 2,
+      "undocumentLines": [
+        1,
+        2,
+        4
+      ]
+    },
+    "src/platforms/adform/Adform.js": {
+      "expectCount": 8,
+      "actualCount": 1,
+      "undocumentLines": [
+        15,
+        22,
+        35,
+        46,
+        51,
+        56,
+        59
+      ]
+    },
+    "src/platforms/doubleclick/DoubleClick.js": {
+      "expectCount": 12,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        5,
+        7,
+        8,
+        14,
+        27,
+        45,
+        53,
+        63,
+        68,
+        71,
+        81
+      ]
+    },
+    "src/platforms/sizmek/Sizmek.js": {
+      "expectCount": 10,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        6,
+        7,
+        13,
+        24,
+        31,
+        41,
+        45,
+        47
+      ]
+    },
+    "src/platforms/weborama/Weborama.js": {
+      "expectCount": 11,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        5,
+        8,
+        9,
+        15,
+        24,
+        30,
+        49,
+        54,
+        59,
+        62
+      ]
+    },
+    "src/util/$.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/Browser.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/createStyle.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/util/debug.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/findElementByCSS.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        5
+      ]
+    },
+    "src/util/findElementsByCSS.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/util/fitText.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/getEnabler.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    "src/util/getGlobalStyleSheet.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        3
+      ]
+    },
+    "src/util/getQueryVar.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/getStyleRuleValue.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/isValidURL.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/load.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        6,
+        7,
+        8,
+        10
+      ]
+    },
+    "src/util/loadAll.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/util/loadImage.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/util/loadJSON.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/util/loadScript.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/util/loadScriptAll.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/util/loadText.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/util/raf.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/randBetween.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/uuid.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        2,
+        3
+      ]
+    }
+  }
+}

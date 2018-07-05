@@ -1,0 +1,90 @@
+[
+  {
+    "name": "createStyle",
+    "filePath": "src/util/createStyle.js",
+    "lines": [
+      {
+        "lineNumber": 2,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 3,
+        "line": " * Programmatically create a css style rule."
+      },
+      {
+        "lineNumber": 4,
+        "line": " *"
+      },
+      {
+        "lineNumber": 5,
+        "line": " * @param {String} selector Class, ID or element selector."
+      },
+      {
+        "lineNumber": 6,
+        "line": " * @param {String} rule CSS rules."
+      },
+      {
+        "lineNumber": 7,
+        "line": " */"
+      },
+      {
+        "lineNumber": 8,
+        "line": "export default function createStyle(classSelector, rules) {"
+      }
+    ],
+    "codeParams": [
+      "classSelector",
+      "rules"
+    ],
+    "docParams": [
+      "selector",
+      "rule"
+    ]
+  },
+  {
+    "name": "loadScript",
+    "filePath": "src/util/loadScript.js",
+    "lines": [
+      {
+        "lineNumber": 0,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 1,
+        "line": " * Load a JavaScript file."
+      },
+      {
+        "lineNumber": 2,
+        "line": " *"
+      },
+      {
+        "lineNumber": 3,
+        "line": " * @param {String} url Script file url. A string array of url's also possible."
+      },
+      {
+        "lineNumber": 4,
+        "line": " * @param {Object} [opt] Callback function when file loaded."
+      },
+      {
+        "lineNumber": 5,
+        "line": " * @retun {Promise}"
+      },
+      {
+        "lineNumber": 6,
+        "line": " */"
+      },
+      {
+        "lineNumber": 7,
+        "line": "export default function loadScript(url, opts = {}) {"
+      }
+    ],
+    "codeParams": [
+      "url",
+      "opts"
+    ],
+    "docParams": [
+      "url",
+      "opt"
+    ]
+  }
+]

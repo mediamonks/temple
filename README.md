@@ -3,29 +3,30 @@
 This is the Richmedia Temple, used for creating richmedia units for various vendors.
 
 [![Travis](https://img.shields.io/travis/mediamonks/temple.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/temple)
-<!-- [![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate) -->
-<!-- [![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master) -->
 [![npm](https://img.shields.io/npm/v/temple.svg?maxAge=2592000)](https://www.npmjs.com/package/@mediamonks/temple)
 [![npm](https://img.shields.io/npm/dm/temple.svg?maxAge=2592000)](https://www.npmjs.com/package/@mediamonks/temple)
+<!-- [![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate) -->
+<!-- [![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master) -->
 
 ## Installation
 
 ```sh
-yarn add seng-boilerplate
+yarn add @mediamonks/temple
 ```
 
 ```sh
-npm i -S seng-boilerplate
+npm i -S @mediamonks/temple
 ```
 
 
 ## Basic Usage
 
 ```ts
-import SengBoilerplate from 'seng-boilerplate';
-// import SengBoilerplate from 'seng-boilerplate/lib/classname';
+import Entity from '@mediamonks/temple/Entity';
 
-// do something with SengBoilerplate
+class Banner extends Entity {
+
+}
 ```
 
 

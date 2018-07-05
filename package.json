@@ -8,15 +8,15 @@
     "dev:babel": "babel ./src -x \".js\" --out-dir ./dist --watch",
     "build": "npm-run-all -s clean build:*",
     "build:babel": "babel ./src -x \".js\" --out-dir ./dist",
-    "test": "cross-env NODE_ENV=test nyc --all mocha \"./test/**/*.spec.{js}\"",
-    "test:dev": "mocha -w --watch-extensions ts,js \"./test/**/*.spec.{js}\"",
+    "test": "cross-env NODE_ENV=test nyc --all mocha \"./test/**/*.spec.js\"",
+    "test:dev": "mocha -w --watch-extensions ts,js \"./test/**/*.spec.js\"",
     "clean": "npm-run-all clean:*",
     "clean:test": "shx rm -rf coverage .nyc_output",
     "clean:npm": "shx rm -rf lib tmp index.js",
     "doc": "node_modules/.bin/esdoc",
     "lint": "npm-run-all lint:*",
     "lint:js": "eslint src --ext .js --cache",
-    "prettify": "prettier --write \"src/**/*.{js,ts,json}\"",
+    "prettify": "prettier --write \"src/**/*.{js,json}\"",
     "precommit": "lint-staged"
   },
   "lint-staged": {

@@ -23,21 +23,17 @@
   },
   "lint-staged": {
     "linters": {
-      "src/**/*.{js,json}": [
-        "prettier --write",
-        "git add"
-      ],
-      "src/**/*.js": [
-        "npm run lint:js"
-      ]
+      "src/**/*.{js,json}": ["prettier --write", "git add"],
+      "src/**/*.js": ["npm run lint:js"]
     }
   },
-  "pre-push": [
-    "validate"
-  ],
+  "pre-push": ["validate"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mediamonks/temple.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "author": "Mient-jan Stelling",
   "license": "MIT",

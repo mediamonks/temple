@@ -11,13 +11,14 @@ sudo: false
 #  - yarn global add codeclimate-test-reporter
 
 before_deploy:
+  - npm run build
   - cd dist
 
 script:
   - npm run test
 
 after_script:
-  - npm run build # make a dist folder
+#  - npm run build # make a dist folder
 #  - codeclimate-test-reporter < coverage/lcov.info
 #  - node_modules/.bin/coveralls < coverage/lcov.info
 

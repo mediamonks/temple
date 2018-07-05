@@ -1,22 +1,12 @@
 {
   "presets": [
-    ["@babel/env", {
-      "targets": {
-        "browsers": ["last 2 versions"],
-        "node": "6"
-      },
-      "loose": true,
-      "useBuiltIns": false
-    }],
-    "@babel/preset-stage-3"
+    "next"
   ],
   "plugins": [
-    ["@babel/plugin-transform-runtime", {
-      "helpers": true,
-      "polyfill": false,
-      "regenerator": false,
-      "moduleName": "@babel/runtime"
-    }]
+
+  ],
+  "bl": [
+
   ],
   "env": {
     "test": {

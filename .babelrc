@@ -10,19 +10,11 @@
         "loose": true,
         "useBuiltIns": false
       }
-    ],
-    "@babel/preset-stage-3"
+    ]
   ],
   "plugins": [
-    [
-      "@babel/plugin-transform-runtime",
-      {
-        "helpers": true,
-        "polyfill": false,
-        "regenerator": false,
-        "moduleName": "@babel/runtime"
-      }
-    ]
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "@babel/plugin-proposal-object-rest-spread"
   ],
   "env": {
     "test": {

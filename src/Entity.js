@@ -102,7 +102,7 @@ export default class Entity {
   }
 
   /**
-   *
+   * Remove component from entity.
    * @param {Component} component
    */
   removeComponent(component) {

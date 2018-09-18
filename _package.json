@@ -24,6 +24,9 @@
       "src/**/*.{js,json}": [
         "prettier --write",
         "git add"
+      ],
+      "src/**/*.js": [
+        "npm run lint:js"
       ]
     }
   },

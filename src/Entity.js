@@ -41,7 +41,7 @@ export default class Entity {
   }
 
   init() {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       const result = Object.values(this._components)
         .map(component => {
           const result = component.init();
@@ -161,4 +161,6 @@ export default class Entity {
   findByName(name) {
     return this._children.filter(entity => entity.name === name);
   }
+
+  destruct() {}
 }

@@ -9,7 +9,7 @@ export default class RefsComponent extends Component {
   }
 
   onStart() {
-    const element = this.getComponent(ElementComponent).getElement();
+    const element = this.getComponent(ElementComponent).get();
     const refs = this.refs;
     const elements = element.querySelectorAll('[ref]');
 

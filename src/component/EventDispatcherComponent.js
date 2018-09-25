@@ -8,6 +8,8 @@ class Listener {
 }
 
 /**
+ * EventDispatcherComponent is a eventDispatcher composed in a component.
+ * is required by DoubleClickPlatformComponent
  *
  */
 export default class EventDispatcherComponent extends Component {
@@ -17,8 +19,15 @@ export default class EventDispatcherComponent extends Component {
    * @param {string} type
    * @param {function} fn
    */
-  addlistener(type, fn) {
-    this._events.push(new Listener(this, type, fn));
+  addEventListener(type, func) {
+    if (!func || typeof func !== 'function') {
+      throw new Error('second argument is required and needs to be a function');
+    }
+
+    const listener = new Listener(this, type, func);
+    this._events.push(listener);
+
+    return listener;
   }
 
   /**
@@ -26,8 +35,11 @@ export default class EventDispatcherComponent extends Component {
    * @param type
    * @param fn
    */
-  removelistener(type, fn) {
-    this._events = this._events.filter(item => item.type === type && item.callback === fn);
+  removeEventListener(type, func) {
+    if (!func || typeof func !== 'function') {
+      throw new Error('second argument is required and needs to be a function');
+    }
+    this._events = this._events.filter(item => item.type === type && item.callback === func);
   }
 
   /**

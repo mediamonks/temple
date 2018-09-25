@@ -18,12 +18,13 @@ import Browser from '../../util/Browser';
 import EventType from '../../event/EventType';
 import ConfigComponent from '../ConfigComponent';
 import EventDispatcherComponent from '../EventDispatcherComponent';
-import PlatformComponent from "./PlatformComponent";
+import PlatformComponent from './PlatformComponent';
 
 /**
  *
  */
 export default class MonetPlatformComponent extends PlatformComponent {
+  static requires = [ConfigComponent, EventDispatcherComponent];
   /**
    *
    * @type {{
@@ -32,15 +33,17 @@ export default class MonetPlatformComponent extends PlatformComponent {
    */
   monetData = null;
 
-  constructor() {
-    super();
+  async init() {
+    await super.init();
+
+    const config = this.getComponent(ConfigComponent).get();
 
     this.domMonetIntegrator = document.querySelector('monet-integrator');
     let domNetflixFonts = document.querySelector('netflix-fonts');
 
     if (!this.domMonetIntegrator) {
       this.domMonetIntegrator = document.createElement('monet-integrator');
-      this.domMonetIntegrator.setAttribute('dynamic-feed-sheet-name', this._config.monet.creativeName);
+      this.domMonetIntegrator.setAttribute('dynamic-feed-sheet-name', config.monet.creativeName);
       document.body.appendChild(this.domMonetIntegrator);
     }
 
@@ -48,67 +51,60 @@ export default class MonetPlatformComponent extends PlatformComponent {
       domNetflixFonts = document.createElement('netflix-fonts');
       document.body.appendChild(domNetflixFonts);
     }
-  }
 
-  init() {
-    return super
-      .init()
-      .then(() => {
-        if (this.domMonetIntegrator.hasAttribute('ready')) {
-          return this.webComponentReady();
-        } else {
-          return new Promise(resolve => {
-            const callback = () => {
-              this.domMonetIntegrator.removeEventListener('ready', callback);
-              this.webComponentReady().then(() => {
-                resolve();
-              });
-            };
-
-            this.domMonetIntegrator.addEventListener('ready', callback);
+    if (this.domMonetIntegrator.hasAttribute('ready')) {
+      await this.webComponentReady();
+    } else {
+      await new Promise(resolve => {
+        const callback = () => {
+          this.domMonetIntegrator.removeEventListener('ready', callback);
+          this.webComponentReady().then(() => {
+            resolve();
           });
-        }
-      })
-      .then(() => {
-        // add tracking
-        const config = this.getComponent(ConfigComponent).getConfig();
-        const dispatcher = this.getComponent(EventDispatcherComponent);
+        };
 
-        dispatcher.addEventListener(EventType.CLICK, event => {
-          let src = String(event.target);
-          Monet.logEvent('CLICK', {
-            src,
-            coords: {
-              x: event.clientX,
-              y: event.clientY,
-            },
-          });
-        });
-
-        dispatcher.addEventListener(EventType.CLICK, event => {
-          Monet.logEvent('AD_EXIT', { url: event.url });
-        });
-
-        dispatcher.addEventListener(EventType.EXPAND, event => {
-          Monet.logEvent('UNIT_RESIZE', {
-            type: 'expand',
-            Size: {
-              width: config.expandable.width,
-              height: config.expandable.height,
-            },
-          });
-        });
-
-        dispatcher.addEventListener(EventType.COLLAPSE, event => {
-          Monet.logEvent('UNIT_RESIZE', {
-            type: 'collapse',
-            Size: {
-              width: config.size.width,
-              height: config.size.height,
-            },
-          });
-        });
+        this.domMonetIntegrator.addEventListener('ready', callback);
       });
+    }
+
+    // add tracking
+
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+
+    dispatcher.addEventListener(EventType.CLICK, event => {
+      const src = String(event.target);
+      Monet.logEvent('CLICK', {
+        src,
+        coords: {
+          x: event.clientX,
+          y: event.clientY,
+        },
+      });
+    });
+
+    dispatcher.addEventListener(EventType.CLICK, event => {
+      Monet.logEvent('AD_EXIT', { url: event.url });
+    });
+
+    dispatcher.addEventListener(EventType.EXPAND, event => {
+      Monet.logEvent('UNIT_RESIZE', {
+        type: 'expand',
+        Size: {
+          width: config.settings.expandable.width,
+          height: config.settings.expandable.height,
+        },
+      });
+    });
+
+    dispatcher.addEventListener(EventType.COLLAPSE, event => {
+      Monet.logEvent('UNIT_RESIZE', {
+        type: 'collapse',
+        Size: {
+          width: config.size.width,
+          height: config.size.height,
+        },
+      });
+    });
   }
 
   webComponentReady() {

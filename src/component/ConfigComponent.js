@@ -7,7 +7,7 @@ export default class ConfigComponent extends Component {
     this._config = config;
   }
 
-  getConfig() {
+  get() {
     return this._config;
   }
 }

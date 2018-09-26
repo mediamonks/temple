@@ -1,10 +1,10 @@
 export default class Component {
   static requires = [];
 
-	/**
-     * @description When entity is initiaized
-	 * @return {Promise<void>}
-	 */
+  /**
+   * @description When entity is initiaized
+   * @return {Promise<void>}
+   */
   init() {
     return Promise.resolve();
   }
@@ -56,5 +56,19 @@ export default class Component {
    */
   hasComponent(component) {
     return this._entity.getComponent(component) !== undefined;
+  }
+
+  hasRequiredComponents(showWarnings = false) {
+    let hasComponents = true;
+    this.constructor.requires.forEach(component => {
+      if (!this.hasComponent(component)) {
+        if (showWarnings) {
+          console.error(`${this.constructor.name} requires ${component.name}`);
+        }
+        hasComponents = false;
+      }
+    });
+
+    return hasComponents;
   }
 }

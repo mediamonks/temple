@@ -44,10 +44,10 @@ export default class Entity {
     return new Promise((resolve, reject) => {
       const result = Object.values(this._components)
         .map(component => {
-          const result = component.init();
+          const initResponse = component.init();
 
-          if (result instanceof Promise) {
-            return result;
+          if (initResponse instanceof Promise) {
+            return initResponse;
           }
 
           return null;
@@ -56,8 +56,17 @@ export default class Entity {
 
       Promise.all(result)
         .then(data => {
-          Object.values(this._components).forEach(component => component.onStart());
-          resolve(data);
+          const components = Object.values(this._components);
+
+          // checking if all components have all required components
+          if (components.every(component => component.hasRequiredComponents(true))) {
+            components.forEach(component => {
+              component.onStart();
+            });
+            resolve(data);
+          } else {
+            reject(new Error('components are missing required components'));
+          }
         })
         .catch(err => {
           console.error('err', err);

@@ -1,6 +1,5 @@
 import Component from './Component';
 import getEnabler from '../util/getEnabler';
-import EventDispatcher from '../event/EventDispatcher';
 import EventDispatcherComponent from './EventDispatcherComponent';
 import EventType from '../event/EventType';
 import ElementComponent from './ElementComponent';

@@ -6,9 +6,7 @@ import loadText from '../util/loadText';
  * @description embeds svgComponent
  */
 export default class EmbedSVGComponent extends Component {
-  constructor() {
-    super();
-  }
+  static requires = [ElementComponent];
 
   init() {
     return super.init().then(() => {

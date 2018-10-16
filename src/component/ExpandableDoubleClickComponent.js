@@ -6,8 +6,7 @@ import EventType from '../event/EventType';
 import ElementComponent from './ElementComponent';
 
 export default class ExpandableDoubleClickComponent extends Component {
-  static requires = [
-      ElementComponent, EventDispatcherComponent];
+  static requires = [ElementComponent, EventDispatcherComponent];
 
   isExpanded = false;
   isExpanding = false;
@@ -17,6 +16,10 @@ export default class ExpandableDoubleClickComponent extends Component {
 
   constructor(config) {
     super();
+
+    if (!config) {
+      throw new Error('ExpandableDoubleClickComponent requires .richmediarc config');
+    }
 
     this.config = config;
 
@@ -41,8 +44,14 @@ export default class ExpandableDoubleClickComponent extends Component {
       .then(Enabler => {
         Enabler.addEventListener(studio.events.StudioEvent.EXPAND_START, this.handleExpandStart);
         Enabler.addEventListener(studio.events.StudioEvent.EXPAND_FINISH, this.handleExpandFinish);
-        Enabler.addEventListener(studio.events.StudioEvent.COLLAPSE_START, this.handleCollapseStart);
-        Enabler.addEventListener(studio.events.StudioEvent.COLLAPSE_FINISH, this.handleCollapseFinish);
+        Enabler.addEventListener(
+          studio.events.StudioEvent.COLLAPSE_START,
+          this.handleCollapseStart,
+        );
+        Enabler.addEventListener(
+          studio.events.StudioEvent.COLLAPSE_FINISH,
+          this.handleCollapseFinish,
+        );
 
         const dispatcher = this.getEntity().getComponent(EventDispatcherComponent);
         if (!dispatcher) {

@@ -1,5 +1,8 @@
 import Component from './Component';
 
+/**
+ * To give a entity a element to work with.
+ */
 export default class ElementComponent extends Component {
   constructor(elementOrSelector) {
     super();

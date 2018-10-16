@@ -11,7 +11,7 @@ export default class RefsComponent extends Component {
     const { refs } = this;
     const elements = element.querySelectorAll('[ref]');
 
-    for (let i = 0; i < elements.length; i++) {
+    for (let i = 0; i < elements.length; i += 1) {
       const el = elements[i];
       const name = el.getAttribute('ref');
 

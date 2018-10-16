@@ -1,22 +1,25 @@
+/**
+ *
+ */
 export default class EventDispatcher {
   _events = {};
 
   dispatchEvent(name, ...args) {
     if (this._events[name]) {
-      let events = this._events[name];
-      let length = events.length;
-      for (let i = 0; i < length; i++) {
+      const events = this._events[name];
+      const { length } = events;
+      for (let i = 0; i < length; i += 1) {
         const func = events[i];
         func.apply(this, args);
       }
     }
   }
 
-	/**
-     *
-	 * @param {string} name
-	 * @param {function} func
-	 */
+  /**
+   *
+   * @param {string} name
+   * @param {function} func
+   */
   addEventListener(name, func) {
     if (!this._events[name]) {
       this._events[name] = [];

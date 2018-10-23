@@ -4,14 +4,6 @@ import Monet from 'Monet';
 import '@netflixadseng/wc-monet-integrator';
 import '@netflixadseng/wc-netflix-fonts';
 
-import '@netflixadseng/wc-netflix-brand-logo';
-import '@netflixadseng/wc-netflix-cta';
-import '@netflixadseng/wc-netflix-flushed-ribbon';
-import '@netflixadseng/wc-netflix-img';
-import '@netflixadseng/wc-netflix-ratings-bug';
-import '@netflixadseng/wc-netflix-text';
-import '@netflixadseng/wc-netflix-video';
-
 import isValidURL from '../../util/isValidURL';
 import Browser from '../../util/Browser';
 // import Platform from './Platform';
@@ -68,7 +60,6 @@ export default class MonetPlatformComponent extends PlatformComponent {
     }
 
     // add tracking
-
     const dispatcher = this.getComponent(EventDispatcherComponent);
 
     dispatcher.addEventListener(EventType.CLICK, event => {

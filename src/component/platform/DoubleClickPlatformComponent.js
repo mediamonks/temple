@@ -90,17 +90,17 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleExit = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_EXIT);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_EXIT);
   };
 
   handleInit = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_INIT);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_INIT);
   };
 
   handleVisible = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_VISIBLE);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_VISIBLE);
   };
 
   /**
@@ -109,7 +109,7 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleExpandStart = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_EXPAND_START);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_EXPAND_START);
   };
 
   /**
@@ -117,17 +117,17 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleExpandFinish = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_EXPAND_FINISH);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_EXPAND_FINISH);
   };
 
   handleCollapse = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_COLLAPSE);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_COLLAPSE);
   };
 
   handleCollapseStart = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_COLLAPSE_START);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_COLLAPSE_START);
   };
 
   /**
@@ -135,7 +135,7 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleHidden = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_HIDDEN);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_HIDDEN);
   };
 
   /**
@@ -143,7 +143,7 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleInteraction = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_INTERACTION);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_INTERACTION);
   };
 
   /**
@@ -151,12 +151,12 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleOrientation = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_ORIENTATION);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_ORIENTATION);
   };
 
   handlePageLoaded = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_PAGE_LOADED);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_PAGE_LOADED);
   };
 
   /**
@@ -165,12 +165,12 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleCollapseFinish = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_COLLAPSE_FINISH);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_COLLAPSE_FINISH);
   };
 
   handleFullscreenSupport = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_FULLSCREEN_SUPPORT);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_SUPPORT);
   };
 
   /**
@@ -179,17 +179,17 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleFullscreenDimensions = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_FULLSCREEN_DIMENSIONS);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_DIMENSIONS);
   };
 
   handleFullscreenExpandStart = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_FULLSCREEN_EXPAND_START);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_EXPAND_START);
   };
 
   handleFullscreenExpandFinish = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_FULLSCREEN_EXPAND_FINISH);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_EXPAND_FINISH);
   };
 
   /**
@@ -197,7 +197,7 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleFullscreenCollapseStart = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_FULLSCREEN_COLLAPSE_START);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_COLLAPSE_START);
   };
 
   /**
@@ -205,6 +205,6 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleFullscreenCollapseFinish = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_FULLSCREEN_COLLAPSE_FINISH);
+    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_COLLAPSE_FINISH);
   };
 }

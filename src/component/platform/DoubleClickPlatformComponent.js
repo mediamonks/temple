@@ -49,24 +49,28 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
   setupEvents() {
     var e = Enabler;
     var se = studio.events.StudioEvent;
+
     e.addEventListener(se.EXIT, this.handleExit);
-    e.addEventListener(se.COLLAPSE, this.handleCollapse);
-    e.addEventListener(se.COLLAPSE_FINISH, this.handleCollapseFinish);
-    e.addEventListener(se.COLLAPSE_START, this.handleCollapseStart);
-    e.addEventListener(se.EXIT, this.handleExit);
-    e.addEventListener(se.EXPAND_FINISH, this.handleExpandFinish);
-    e.addEventListener(se.EXPAND_START, this.handleExpandStart);
-    e.addEventListener(se.FULLSCREEN_COLLAPSE_FINISH, this.handleFullscreenCollapseFinish);
-    e.addEventListener(se.FULLSCREEN_COLLAPSE_START, this.handleFullscreenCollapseStart);
-    e.addEventListener(se.FULLSCREEN_DIMENSIONS, this.handleFullscreenDimensions);
-    e.addEventListener(se.FULLSCREEN_EXPAND_FINISH, this.handleFullscreenExpandFinish);
-    e.addEventListener(se.FULLSCREEN_EXPAND_START, this.handleFullscreenExpandStart);
-    e.addEventListener(se.FULLSCREEN_SUPPORT, this.handleFullscreenSupport);
-    e.addEventListener(se.HIDDEN, this.handleHidden);
+
     e.addEventListener(se.INTERACTION, this.handleInteraction);
     e.addEventListener(se.ORIENTATION, this.handleOrientation);
     e.addEventListener(se.PAGE_LOADED, this.handlePageLoaded);
+
+    e.addEventListener(se.HIDDEN, this.handleHidden);
     e.addEventListener(se.VISIBLE, this.handleVisible);
+
+    // expandable events
+    e.addEventListener(se.COLLAPSE, this.handleCollapse);
+    e.addEventListener(se.COLLAPSE_FINISH, this.handleCollapseFinish);
+    e.addEventListener(se.COLLAPSE_START, this.handleCollapseStart);
+
+    e.addEventListener(se.EXPAND_FINISH, this.handleExpandFinish);
+    e.addEventListener(se.EXPAND_START, this.handleExpandStart);
+
+    e.addEventListener(se.FULLSCREEN_COLLAPSE_FINISH, this.handleFullscreenCollapseFinish);
+    e.addEventListener(se.FULLSCREEN_COLLAPSE_START, this.handleFullscreenCollapseStart);
+    e.addEventListener(se.FULLSCREEN_EXPAND_FINISH, this.handleFullscreenExpandFinish);
+    e.addEventListener(se.FULLSCREEN_EXPAND_START, this.handleFullscreenExpandStart);
   }
 
   /**
@@ -83,6 +87,32 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
     }
 
     studio.video.Reporter.attach(id, videoElement);
+  }
+
+  queryFullscreenDimensions() {
+    return new Promise(resolve => {
+      const fn = data => {
+        Enabler.removeEventListener(studio.events.StudioEvent.FULLSCREEN_SUPPORT, fn);
+        resolve(data);
+      };
+      Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_SUPPORT, fn);
+    });
+  }
+
+  /**
+   * Indicates the maximum dimensions available to the creative for
+   * fullscreen expansion, as well as the offset of the original creative.
+   *
+   * @return {Promise<boolean>}
+   */
+  queryFullscreenDimensions() {
+    return new Promise(resolve => {
+      const fn = data => {
+        Enabler.removeEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
+        resolve(data);
+      };
+      Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
+    });
   }
 
   /**
@@ -131,7 +161,8 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
   };
 
   /**
-   * Dispatched when the ad is hidden from the user. This is useful for environments where the ad is rendered offscreen and displayed to the user at a later time, then possibly hidden.
+   * Dispatched when the ad is hidden from the user. This is useful for environments where the
+   * ad is rendered offscreen and displayed to the user at a later time, then possibly hidden.
    */
   handleHidden = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
@@ -166,20 +197,6 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
   handleCollapseFinish = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
     dispatcher.dispatchEvent(DoubleClickEventEnum.DC_COLLAPSE_FINISH);
-  };
-
-  handleFullscreenSupport = () => {
-    const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_FULLSCREEN_SUPPORT);
-  };
-
-  /**
-   * Indicates the maximum dimensions available to the creative for
-   * fullscreen expansion, as well as the offset of the original creative.
-   */
-  handleFullscreenDimensions = () => {
-    const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatchEvent(DoubleClickEventEnum.DC_FULLSCREEN_DIMENSIONS);
   };
 
   handleFullscreenExpandStart = () => {

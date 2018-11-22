@@ -1,4 +1,4 @@
-import findElementByCSS from 'temple/util/findElementByCSS';
+import findElementByCSS from './findElementByCSS';
 
 export default function findElementsByCSS(element, styles, sheet) {
   var obj;

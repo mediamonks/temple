@@ -6,7 +6,7 @@ export default function debug(e, c, v) {
       ' ' + (v || temple.version),
       ':',
       e || '',
-      typeof c != 'string' && typeof c != 'undefined' ? c : ''
+      typeof c != 'string' && typeof c != 'undefined' ? c : '',
     );
   }
 }

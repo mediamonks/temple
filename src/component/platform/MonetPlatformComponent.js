@@ -143,7 +143,7 @@ export default class MonetPlatformComponent extends PlatformComponent {
     };
   }
 
-  gotoExit() {
+  gotoExit = () => {
     let url = null;
     const monetData = this.getData();
 
@@ -160,5 +160,5 @@ export default class MonetPlatformComponent extends PlatformComponent {
     } else {
       Enabler.exitOverride('Default Exit', null);
     }
-  }
+  };
 }

@@ -1,8 +1,8 @@
 # Temple
 
-[![Travis](https://img.shields.io/travis/mediamonks/temple.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/temple)
-[![npm](https://img.shields.io/npm/v/temple.svg?maxAge=2592000)](https://www.npmjs.com/package/@mediamonks/temple)
-[![npm](https://img.shields.io/npm/dm/temple.svg?maxAge=2592000)](https://www.npmjs.com/package/@mediamonks/temple)
+[![Travis](https://img.shields.io/travis/mediamonks/temple.svg?style=flat)](https://travis-ci.org/mediamonks/temple)
+[![npm](https://img.shields.io/npm/v/@mediamonks/temple.svg?style=flat)](https://www.npmjs.com/package/@mediamonks/temple)
+[![npm](https://img.shields.io/npm/dt/@mediamonks/temple.svg?style=flat)](https://www.npmjs.com/package/@mediamonks/temple)
 <!-- [![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate) -->
 <!-- [![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master) -->
 

@@ -53,6 +53,9 @@ export default function fitText(copyElement) {
           .replace('px', ''),
       ) > parentWidth
     ) {
+      if(s < 1 || l < 1){
+        return;
+      }
       s -= 0.2;
       l -= 0.2;
       copyElement.style.fontSize = s + 'px';

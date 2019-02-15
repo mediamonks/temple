@@ -1,4 +1,4 @@
-import getStyleRuleValue from 'temple/util/getStyleRuleValue';
+import getStyleRuleValue from './getStyleRuleValue';
 
 const elementsToSearch = ['DIV', 'SPAN', 'IMG', 'CANVAS', 'SVG', 'CIRCLE', 'PATH'];
 
@@ -8,12 +8,15 @@ export default function findElementByCSS(
   sheet,
   obj = {
     all: [],
-  }
+  },
 ) {
   if (element && element.childNodes && element.childNodes.length > 0) {
     for (let i = 0; i < element.childNodes.length; i++) {
       const child = element.childNodes[i];
-      if (child.type === 'image/svg+xml' || elementsToSearch.indexOf(child.nodeName.toUpperCase()) !== -1) {
+      if (
+        child.type === 'image/svg+xml' ||
+        elementsToSearch.indexOf(child.nodeName.toUpperCase()) !== -1
+      ) {
         if (child.id || child.className) {
           if (styles) {
             styles = typeof styles === 'string' ? [styles] : styles;

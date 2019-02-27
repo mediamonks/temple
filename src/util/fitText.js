@@ -1,64 +1,74 @@
-export default function fitText(copyElement) {
-  for (let i = 0; i < copyElement.length; i++) {
-    TweenMax.set(copyElement[i], { clearProps: 'fontSize, lineHeight' });
-    var p = copyElement[i].parentElement;
-    var s = Number(
+/**
+ *
+ * @param {Array<HTMLElement>} copyElements
+ */
+export default function fitText(...copyElements) {
+  copyElements = copyElements.flat();
+
+  copyElements.forEach(copyElement => {
+    TweenMax.set(copyElement, { clearProps: 'fontSize, lineHeight' });
+    const { parentElement } = copyElement;
+    let fontSize = Number(
       window
-        .getComputedStyle(p, null)
+        .getComputedStyle(parentElement, null)
         .getPropertyValue('font-size')
         .replace('px', ''),
     );
-    var l =
+    let lineHeight =
       Number(
         window
-          .getComputedStyle(p, null)
+          .getComputedStyle(parentElement, null)
           .getPropertyValue('line-height')
           .replace('px', ''),
-      ) || s + 1;
-    var targetWidth = Number(
+      ) || fontSize + 1;
+    const targetWidth = Number(
       window
-        .getComputedStyle(copyElement[i], null)
+        .getComputedStyle(copyElement, null)
         .getPropertyValue('width')
         .replace('px', ''),
     );
-    var parentWidth = Number(
+    const parentWidth = Number(
       window
-        .getComputedStyle(p, null)
+        .getComputedStyle(parentElement, null)
         .getPropertyValue('width')
         .replace('px', ''),
     );
-    var targetHeight = Number(
+    const targetHeight = Number(
       window
-        .getComputedStyle(copyElement[i], null)
+        .getComputedStyle(copyElement, null)
         .getPropertyValue('height')
         .replace('px', ''),
     );
-    var parentHeight = Number(
+    const parentHeight = Number(
       window
-        .getComputedStyle(p, null)
+        .getComputedStyle(parentElement, null)
         .getPropertyValue('height')
         .replace('px', ''),
     );
+
     if (targetHeight > parentHeight || targetWidth > parentWidth) {
       while (
         Number(
           window
-            .getComputedStyle(copyElement[i], null)
+            .getComputedStyle(copyElement, null)
             .getPropertyValue('height')
             .replace('px', ''),
         ) > parentHeight ||
         Number(
           window
-            .getComputedStyle(copyElement[i], null)
+            .getComputedStyle(copyElement, null)
             .getPropertyValue('width')
             .replace('px', ''),
         ) > parentWidth
       ) {
-        s -= 0.2;
-        l -= 0.2;
-        copyElement[i].style.fontSize = s + 'px';
-        copyElement[i].style.lineHeight = l + 'px';
+        if (fontSize < 1 || lineHeight < 1) {
+          return;
+        }
+        fontSize -= 0.2;
+        lineHeight -= 0.2;
+        copyElement.style.fontSize = `${fontSize}px`;
+        copyElement.style.lineHeight = `${lineHeight}px`;
       }
     }
-  }
+  });
 }

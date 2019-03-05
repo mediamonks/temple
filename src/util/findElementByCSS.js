@@ -1,6 +1,6 @@
 import getStyleRuleValue from './getStyleRuleValue';
 
-const elementsToSearch = ['DIV', 'SPAN', 'IMG', 'CANVAS', 'SVG', 'CIRCLE', 'PATH'];
+let elementsToSearch = ['div', 'span', 'img', 'canvas', 'svg', 'circle', 'path'];
 
 /**
  *
@@ -13,17 +13,19 @@ const elementsToSearch = ['DIV', 'SPAN', 'IMG', 'CANVAS', 'SVG', 'CIRCLE', 'PATH
 export default function findElementByCSS(
   element,
   styles = null,
+  customTypes = null,
   sheet = null,
   obj = {
     all: [],
   },
 ) {
+  elementsToSearch = elementsToSearch.concat(customTypes);
   if (element && element.childNodes && element.childNodes.length > 0) {
     for (let i = 0; i < element.childNodes.length; i++) {
       const child = element.childNodes[i];
       if (
         child.type === 'image/svg+xml' ||
-        elementsToSearch.indexOf(child.nodeName.toUpperCase()) !== -1
+        elementsToSearch.indexOf(child.nodeName.toLowerCase()) !== -1
       ) {
         if (child.id || child.className) {
           if (styles) {
@@ -49,17 +51,17 @@ export default function findElementByCSS(
               for (let k = 0; k < cssClasses.length; k++) {
                 if (cssClasses[k] && obj[styles[j]].indexOf(child) === -1) {
                   const val = getStyleRuleValue(`.${styles[j]}`, `.${cssClasses[k]}`, sheet);
-                  if (val) {
+                  if (val && cssClasses[k] == val) {
                     obj[styles[j]].push(child);
                   }
                 }
               }
             }
             obj.all.push(child);
-            findElementByCSS(child, styles, sheet, obj);
+            findElementByCSS(child, styles, null, sheet, obj);
           } else {
             obj.push(child);
-            findElementByCSS(child, null, null, obj);
+            findElementByCSS(child, null, null, null, obj);
           }
         }
       }

@@ -1,7 +1,14 @@
 import findElementByCSS from './findElementByCSS';
 
+/**
+ *
+ * @param {HTMLElement} element
+ * @param {Array<string>} styles
+ * @param {string} sheet
+ * @return {{all}}
+ */
 export default function findElementsByCSS(element, styles, sheet) {
-  var obj;
+  let obj;
   if (styles) {
     obj = findElementByCSS(element, styles, sheet);
   } else {

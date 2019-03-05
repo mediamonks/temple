@@ -2,6 +2,14 @@ import getStyleRuleValue from './getStyleRuleValue';
 
 const elementsToSearch = ['DIV', 'SPAN', 'IMG', 'CANVAS', 'SVG', 'CIRCLE', 'PATH'];
 
+/**
+ *
+ * @param element
+ * @param styles
+ * @param sheet
+ * @param obj
+ * @return {{all: Array}}
+ */
 export default function findElementByCSS(
   element,
   styles,
@@ -27,7 +35,7 @@ export default function findElementByCSS(
               }
 
               if (child.id && obj[styles[j]].indexOf(child) === -1) {
-                var val = getStyleRuleValue('.' + styles[j], '#' + child.id, sheet);
+                const val = getStyleRuleValue(`.${styles[j]}`, `#${child.id}`, sheet);
                 if (val) {
                   obj[styles[j]].push(child);
                 }
@@ -40,7 +48,7 @@ export default function findElementByCSS(
 
               for (let k = 0; k < c.length; k++) {
                 if (c[k] && obj[styles[j]].indexOf(child) === -1) {
-                  const val = getStyleRuleValue('.' + styles[j], '.' + c[k], sheet);
+                  const val = getStyleRuleValue(`.${styles[j]}`, `.${c[k]}`, sheet);
                   if (val) {
                     obj[styles[j]].push(child);
                   }

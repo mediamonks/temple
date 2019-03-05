@@ -3,16 +3,16 @@ import getGlobalStyleSheet from './getGlobalStyleSheet';
 /**
  * Programmatically create a css style rule.
  *
- * @param {String} selector Class, ID or element selector.
- * @param {String} rule CSS rules.
+ * @param {String} classSelector Class, ID or element selector.
+ * @param {String} rules CSS rules.
  */
 export default function createStyle(classSelector, rules) {
-  classSelector = classSelector != 'banner' ? '#banner ' + classSelector : classSelector;
+  classSelector = classSelector !== 'banner' ? `#banner ${classSelector}` : classSelector;
 
-  var styleSheet = getGlobalStyleSheet();
+  const styleSheet = getGlobalStyleSheet();
 
   if (styleSheet.sheet.insertRule) {
-    styleSheet.sheet.insertRule(classSelector + '{' + rules + '}', 0);
+    styleSheet.sheet.insertRule(`${classSelector}{${rules}}`, 0);
   } else if (styleSheet.styleSheet) {
     styleSheet.styleSheet.addRule(classSelector, rules);
   } else if (styleSheet.sheet) {

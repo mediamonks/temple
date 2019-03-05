@@ -12,8 +12,8 @@ const elementsToSearch = ['DIV', 'SPAN', 'IMG', 'CANVAS', 'SVG', 'CIRCLE', 'PATH
  */
 export default function findElementByCSS(
   element,
-  styles,
-  sheet,
+  styles = null,
+  sheet = null,
   obj = {
     all: [],
   },

@@ -4,10 +4,10 @@ const elementsToSearch = ['DIV', 'SPAN', 'IMG', 'CANVAS', 'SVG', 'CIRCLE', 'PATH
 
 /**
  *
- * @param element
- * @param styles
- * @param sheet
- * @param obj
+ * @param {HTMLElement} element
+ * @param {Array<string>} styles
+ * @param {string} sheet
+ * @param {object} obj
  * @return {{all: Array}}
  */
 export default function findElementByCSS(
@@ -41,14 +41,14 @@ export default function findElementByCSS(
                 }
               }
 
-              const c =
+              const cssClasses =
                 typeof child.className === 'object'
                   ? String(child.className.baseVal).split(' ')
                   : String(child.className).split(' ');
 
-              for (let k = 0; k < c.length; k++) {
-                if (c[k] && obj[styles[j]].indexOf(child) === -1) {
-                  const val = getStyleRuleValue(`.${styles[j]}`, `.${c[k]}`, sheet);
+              for (let k = 0; k < cssClasses.length; k++) {
+                if (cssClasses[k] && obj[styles[j]].indexOf(child) === -1) {
+                  const val = getStyleRuleValue(`.${styles[j]}`, `.${cssClasses[k]}`, sheet);
                   if (val) {
                     obj[styles[j]].push(child);
                   }

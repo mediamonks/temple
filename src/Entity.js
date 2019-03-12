@@ -7,6 +7,7 @@ import Component from './component/Component';
 export default class Entity {
   /**
    * Components, you can only add one component of the same type
+   *
    * @type {{}}
    * @private
    */
@@ -40,6 +41,10 @@ export default class Entity {
     this.name = name;
   }
 
+  /**
+   *
+   * @return {Promise<any>}
+   */
   init() {
     return new Promise((resolve, reject) => {
       const result = Object.values(this._components)
@@ -95,8 +100,8 @@ export default class Entity {
   }
 
   /**
-   *
-   * @param {Component} component
+   * @template T
+   * @return {T}
    */
   getComponent(component) {
     let name = '';
@@ -104,7 +109,7 @@ export default class Entity {
     if (typeof component === 'string') {
       name = component;
     } else {
-      name = component.name;
+      const { name } = component;
     }
 
     return this._components[name];

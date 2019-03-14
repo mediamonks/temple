@@ -12,6 +12,15 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
       .init()
       .then(() => this.loadEnabler())
       .then(() => {
+        return new Promise(resolve => {
+          if (!Enabler.isInitialized()) {
+            Enabler.addEventListener(studio.events.StudioEvent.INIT, resolve);
+          } else {
+            resolve();
+          }
+        });
+      })
+      .then(() => {
         this.queryFullscreenDimensions();
         this.queryFullscreenSupport();
         this.setupEvents();
@@ -30,27 +39,27 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
     const e = Enabler;
     const se = studio.events.StudioEvent;
 
-    e.addEventListener(se.DC_EXIT, this.handleExit);
+    e.addEventListener(se.EXIT, this.handleExit);
 
-    e.addEventListener(se.DC_INTERACTION, this.handleInteraction);
-    e.addEventListener(se.DC_ORIENTATION, this.handleOrientation);
-    e.addEventListener(se.DC_PAGE_LOADED, this.handlePageLoaded);
+    e.addEventListener(se.INTERACTION, this.handleInteraction);
+    e.addEventListener(se.ORIENTATION, this.handleOrientation);
+    e.addEventListener(se.PAGE_LOADED, this.handlePageLoaded);
 
-    e.addEventListener(se.DC_HIDDEN, this.handleHidden);
-    e.addEventListener(se.DC_VISIBLE, this.handleVisible);
+    e.addEventListener(se.HIDDEN, this.handleHidden);
+    e.addEventListener(se.VISIBLE, this.handleVisible);
 
     // expandable events
-    e.addEventListener(se.DC_COLLAPSE, this.handleCollapse);
-    e.addEventListener(se.DC_COLLAPSE_FINISH, this.handleCollapseFinish);
-    e.addEventListener(se.DC_COLLAPSE_START, this.handleCollapseStart);
+    e.addEventListener(se.COLLAPSE, this.handleCollapse);
+    e.addEventListener(se.COLLAPSE_FINISH, this.handleCollapseFinish);
+    e.addEventListener(se.COLLAPSE_START, this.handleCollapseStart);
 
-    e.addEventListener(se.DC_EXPAND_FINISH, this.handleExpandFinish);
-    e.addEventListener(se.DC_EXPAND_START, this.handleExpandStart);
+    e.addEventListener(se.EXPAND_FINISH, this.handleExpandFinish);
+    e.addEventListener(se.EXPAND_START, this.handleExpandStart);
 
-    e.addEventListener(se.DC_FULLSCREEN_COLLAPSE_FINISH, this.handleFullscreenCollapseFinish);
-    e.addEventListener(se.DC_FULLSCREEN_COLLAPSE_START, this.handleFullscreenCollapseStart);
-    e.addEventListener(se.DC_FULLSCREEN_EXPAND_FINISH, this.handleFullscreenExpandFinish);
-    e.addEventListener(se.DC_FULLSCREEN_EXPAND_START, this.handleFullscreenExpandStart);
+    e.addEventListener(se.FULLSCREEN_COLLAPSE_FINISH, this.handleFullscreenCollapseFinish);
+    e.addEventListener(se.FULLSCREEN_COLLAPSE_START, this.handleFullscreenCollapseStart);
+    e.addEventListener(se.FULLSCREEN_EXPAND_FINISH, this.handleFullscreenExpandFinish);
+    e.addEventListener(se.FULLSCREEN_EXPAND_START, this.handleFullscreenExpandStart);
   }
 
   /**

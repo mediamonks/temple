@@ -1,5 +1,5 @@
 const json = require('./package.json');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 const distPackage = Object.assign({}, json);
 distPackage.scripts = {};

@@ -1,28 +1,39 @@
+/**
+ *
+ * @param {string} style
+ * @param {string} selector
+ * @param {string} sheet
+ * @return {string}
+ */
 export default function getStyleRuleValue(style, selector, sheet) {
-  const sheets = [];
-  for (var k in document.styleSheets) {
-    if (
-      document.styleSheets[k].href &&
-      (document.styleSheets[k].href.indexOf('style.css') != -1 ||
-        document.styleSheets[k].href.indexOf(sheet) != -1)
-    ) {
-      sheets.push(document.styleSheets[k]);
-    }
-  }
+  let result = null;
 
-  for (let i = 0, l = sheets.length; i < l; i++) {
-    let sheet = sheets[i];
-    if (!sheet.cssRules) continue;
-    for (var j = 0, k = sheet.cssRules.length; j < k; j++) {
-      var rule = sheet.cssRules[j];
-      if (rule.selectorText) {
-        if (rule.selectorText.indexOf(selector) != -1 && rule.selectorText.indexOf(style) != -1) {
-          var all = rule.selectorText.substring(0, rule.selectorText.indexOf(style)).split('.');
-          var node = all[all.length - 1];
-          return node;
+  const list = Array.from(document.styleSheets).filter(cssStyleSheet => {
+    return (
+      cssStyleSheet.href &&
+      cssStyleSheet.href.indexOf('style.css') !== -1 &&
+      cssStyleSheet.href.indexOf(sheet) !== -1
+    );
+  });
+
+  // list from correct stylesheets
+  list.forEach(cssStyleSheet => {
+    if (!result && cssStyleSheet.cssRules) {
+      Array.from(cssStyleSheet.cssRules).forEach(rule => {
+        if (rule.selectorText) {
+          if (
+            !result &&
+            rule.selectorText.indexOf(selector) !== -1 &&
+            rule.selectorText.indexOf(style) !== -1
+          ) {
+            const all = rule.selectorText.substring(0, rule.selectorText.indexOf(style)).split('.');
+
+            result = all[all.length - 1];
+          }
         }
-      }
+      });
     }
-  }
-  return;
+  });
+
+  return result;
 }

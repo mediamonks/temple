@@ -74,7 +74,7 @@ export default class MonetPlatformComponent extends PlatformComponent {
       Monet.logEvent('AD_EXIT', { url: event.url });
     });
 
-    dispatcher.addEventListener(EventType.EXPAND, event => {
+    dispatcher.addEventListener(EventType.EXPAND, () => {
       Monet.logEvent('UNIT_RESIZE', {
         type: 'expand',
         Size: {
@@ -84,7 +84,7 @@ export default class MonetPlatformComponent extends PlatformComponent {
       });
     });
 
-    dispatcher.addEventListener(EventType.COLLAPSE, event => {
+    dispatcher.addEventListener(EventType.COLLAPSE, () => {
       Monet.logEvent('UNIT_RESIZE', {
         type: 'collapse',
         Size: {

@@ -90,7 +90,6 @@ export default class Entity {
     }
 
     if (this._components[component.constructor.name]) {
-      debugger;
       console.warn(`Already have a component ${component.constructor.name} added to this Entity`);
     }
 
@@ -109,7 +108,7 @@ export default class Entity {
     if (typeof component === 'string') {
       name = component;
     } else {
-      const { name } = component;
+      ({ name } = component);
     }
 
     return this._components[name];

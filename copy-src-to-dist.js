@@ -14,6 +14,6 @@ glob("./src/**/*.*", {}, function (er, files) {
       .catch(err => console.error(err))
     // // fs.createReadStream('test.log').pipe(fs.createWriteStream('newLog.log'));
   })).then(result => {
-
+    fs.copy('README.md', './dist/README.md');
   })
 });

@@ -1,9 +1,6 @@
 import Enabler from 'Enabler';
 import Monet from 'Monet';
 
-import '@netflixadseng/wc-monet-integrator';
-import '@netflixadseng/wc-netflix-fonts';
-
 import isValidURL from '../../util/isValidURL';
 import Browser from '../../util/Browser';
 // import Platform from './Platform';

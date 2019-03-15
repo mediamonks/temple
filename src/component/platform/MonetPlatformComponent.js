@@ -1,9 +1,6 @@
 import Enabler from 'Enabler';
 import Monet from 'Monet';
 
-import '@netflixadseng/wc-monet-integrator';
-import '@netflixadseng/wc-netflix-fonts';
-
 import isValidURL from '../../util/isValidURL';
 import Browser from '../../util/Browser';
 // import Platform from './Platform';
@@ -77,7 +74,7 @@ export default class MonetPlatformComponent extends PlatformComponent {
       Monet.logEvent('AD_EXIT', { url: event.url });
     });
 
-    dispatcher.addEventListener(EventType.EXPAND, event => {
+    dispatcher.addEventListener(EventType.EXPAND, () => {
       Monet.logEvent('UNIT_RESIZE', {
         type: 'expand',
         Size: {
@@ -87,7 +84,7 @@ export default class MonetPlatformComponent extends PlatformComponent {
       });
     });
 
-    dispatcher.addEventListener(EventType.COLLAPSE, event => {
+    dispatcher.addEventListener(EventType.COLLAPSE, () => {
       Monet.logEvent('UNIT_RESIZE', {
         type: 'collapse',
         Size: {

@@ -7,6 +7,7 @@ import Component from './component/Component';
 export default class Entity {
   /**
    * Components, you can only add one component of the same type
+   *
    * @type {{}}
    * @private
    */
@@ -40,6 +41,10 @@ export default class Entity {
     this.name = name;
   }
 
+  /**
+   *
+   * @return {Promise<any>}
+   */
   init() {
     return new Promise((resolve, reject) => {
       const result = Object.values(this._components)
@@ -85,7 +90,6 @@ export default class Entity {
     }
 
     if (this._components[component.constructor.name]) {
-      debugger;
       console.warn(`Already have a component ${component.constructor.name} added to this Entity`);
     }
 
@@ -95,8 +99,8 @@ export default class Entity {
   }
 
   /**
-   *
-   * @param {Component} component
+   * @template T
+   * @return {T}
    */
   getComponent(component) {
     let name = '';
@@ -104,7 +108,7 @@ export default class Entity {
     if (typeof component === 'string') {
       name = component;
     } else {
-      name = component.name;
+      ({ name } = component);
     }
 
     return this._components[name];
@@ -120,7 +124,7 @@ export default class Entity {
     if (typeof component === 'string') {
       name = component;
     } else {
-      name = component.name;
+      ({ name } = component);
     }
 
     if (this._components[name]) {
@@ -129,6 +133,10 @@ export default class Entity {
     }
   }
 
+  /**
+   *
+   * @param {Entity} entity
+   */
   addChild(entity) {
     if (entity === this) {
       throw new Error('cant child your self');
@@ -144,7 +152,7 @@ export default class Entity {
 
   /**
    * Removes child entity from entity
-   * @param entity
+   * @param {Entity} entity
    */
   removeChild(entity) {
     if (entity === this) {
@@ -164,7 +172,7 @@ export default class Entity {
 
   /**
    *
-   * @param name
+   * @param {string} name
    * @return {Entity[]}
    */
   findByName(name) {

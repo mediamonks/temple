@@ -22,7 +22,11 @@ export default function findElementByCSS(
   const elementsToSearch = basicElementsToSearch.concat(customTypes);
 
   if (element && element.childNodes && element.childNodes.length > 0) {
-    const children = Array.from(element.querySelectorAll('> *'));
+    const children = Array.from(element.querySelectorAll(Array.from(elementsToSearch)));
+    console.log(children);
+
+
+    // const children = Array.from(element.querySelectorAll('*'));
 
     children.forEach(child => {
       if (
@@ -53,7 +57,7 @@ export default function findElementByCSS(
               cssClasses.forEach(cssClass => {
                 if (cssClass && obj[style].indexOf(child) === -1) {
                   const val = getStyleRuleValue(`.${style}`, `.${cssClass}`, sheet);
-                  if (val && cssClass === val) {
+                  if (val) {
                     obj[style].push(child);
                   }
                 }
@@ -64,7 +68,7 @@ export default function findElementByCSS(
             findElementByCSS(child, styles, customTypes, sheet, obj);
           } else {
             obj.push(child);
-            findElementByCSS(child, null, null, null, obj);
+            findElementByCSS(child, styles, customTypes, sheet, obj);
           }
         }
       }

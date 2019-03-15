@@ -133,6 +133,10 @@ export default class Entity {
     }
   }
 
+  /**
+   *
+   * @param {Entity} entity
+   */
   addChild(entity) {
     if (entity === this) {
       throw new Error('cant child your self');
@@ -148,7 +152,7 @@ export default class Entity {
 
   /**
    * Removes child entity from entity
-   * @param entity
+   * @param {Entity} entity
    */
   removeChild(entity) {
     if (entity === this) {
@@ -168,7 +172,7 @@ export default class Entity {
 
   /**
    *
-   * @param name
+   * @param {string} name
    * @return {Entity[]}
    */
   findByName(name) {

@@ -124,7 +124,7 @@ export default class Entity {
     if (typeof component === 'string') {
       name = component;
     } else {
-      name = component.name;
+      ({ name } = component);
     }
 
     if (this._components[name]) {

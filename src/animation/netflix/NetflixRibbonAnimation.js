@@ -1,6 +1,6 @@
-import AbstractAnimation from './AbstractAnimation';
+import AbstractAnimation from '../AbstractAnimation';
 
-export default class NetflixCTAAnimation extends AbstractAnimation {
+export default class NetflixRibbonAnimation extends AbstractAnimation {
   getTransitionIn(complete = () => {}) {
     this.show();
     const tl = new TimelineLite();

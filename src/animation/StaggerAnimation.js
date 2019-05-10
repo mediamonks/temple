@@ -1,6 +1,6 @@
 import AbstractAnimation from './AbstractAnimation';
 
-export default class DefaultStaggerAnimation extends AbstractAnimation {
+export default class StaggerAnimation extends AbstractAnimation {
   getTransitionIn(complete = () => {}) {
     const tl = new TimelineLite();
     tl.call(() => this.show());

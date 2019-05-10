@@ -32,12 +32,10 @@
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animation">animation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/AbstractAnimation.js~AbstractAnimation.html">AbstractAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/StaggerAnimation.js~StaggerAnimation.html">StaggerAnimation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-until">until</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animation-netflix">animation/netflix</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation.html">NetflixBrandLogoAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/netflix/NetflixCTAAnimation.js~NetflixCTAAnimation.html">NetflixCTAAnimation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation.html">NetflixCTAAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixRibbonAnimation.html">NetflixRibbonAnimation</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#component">component</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/AutoEntityComponent.js~AutoEntityComponent.html">AutoEntityComponent</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/ChainComponent.js~ChainComponent.html">ChainComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/Component.js~Component.html">Component</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/ConfigComponent.js~ConfigComponent.html">ConfigComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/ElementComponent.js~ElementComponent.html">ElementComponent</a></span></span></li>
@@ -74,6 +72,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-politeLoadImages">politeLoadImages</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-raf">raf</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randBetween">randBetween</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-until">until</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uuid">uuid</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Browser">Browser</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#util-netflix">util/netflix</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-untilVideoIsComplete">untilVideoIsComplete</a></span></span></li>
@@ -83,7 +82,17 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/util/Browser.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const Browser = {};
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ *
+ * @type {{
+ *  isMobile: boolean
+ *  isiOS: boolean
+ *  isiOS9up: boolean
+ *  isiPad: boolean
+ *  isSafari: boolean
+ * }}
+ */
+const Browser = {};
 Browser.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent,
 );

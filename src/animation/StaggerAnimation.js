@@ -1,6 +1,13 @@
 import AbstractAnimation from './AbstractAnimation';
 
+/**
+ * A stagger animation
+ */
 export default class StaggerAnimation extends AbstractAnimation {
+  /**
+   * Will return the transition Timeline
+   * @return {TimelineLite}
+   */
   getTransitionIn(complete = () => {}) {
     const tl = new TimelineLite();
     tl.call(() => this.show());
@@ -9,6 +16,10 @@ export default class StaggerAnimation extends AbstractAnimation {
     return tl;
   }
 
+  /**
+   * Will return the transition Timeline
+   * @return {TimelineLite}
+   */
   getTransitionOut(complete = () => {}) {
     const tl = new TimelineLite();
     tl.staggerTo(this.element, 1, { y: '-=20', opacity: 0 }, 0.2);

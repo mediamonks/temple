@@ -18,12 +18,6 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "@mediamonks/temple/src/component/chaincomponent.js~chaincomponent",
-    "class/src/component/ChainComponent.js~ChainComponent.html",
-    "<span>ChainComponent</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/component/ChainComponent.js</span>",
-    "class"
-  ],
-  [
     "@mediamonks/temple/src/component/component.js~component",
     "class/src/component/Component.js~Component.html",
     "<span>Component</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/component/Component.js</span>",
@@ -102,9 +96,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "@mediamonks/temple/src/animation/netflix/netflixribbonanimation.js~netflixctaanimation",
-    "class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation.html",
-    "<span>NetflixCTAAnimation</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/animation/netflix/NetflixRibbonAnimation.js</span>",
+    "@mediamonks/temple/src/animation/netflix/netflixribbonanimation.js~netflixribbonanimation",
+    "class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixRibbonAnimation.html",
+    "<span>NetflixRibbonAnimation</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/animation/netflix/NetflixRibbonAnimation.js</span>",
     "class"
   ],
   [
@@ -276,9 +270,9 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "@mediamonks/temple/src/animation/until.js~until",
+    "@mediamonks/temple/src/util/until.js~until",
     "function/index.html#static-function-until",
-    "<span>until</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/animation/until.js</span>",
+    "<span>until</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/until.js</span>",
     "function"
   ],
   [
@@ -810,22 +804,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/animation/netflix/netflixribbonanimation.js~netflixctaanimation#gettransitionin",
-    "class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation.html#instance-method-getTransitionIn",
-    "src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation#getTransitionIn",
+    "src/animation/netflix/netflixribbonanimation.js~netflixribbonanimation#gettransitionin",
+    "class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixRibbonAnimation.html#instance-method-getTransitionIn",
+    "src/animation/netflix/NetflixRibbonAnimation.js~NetflixRibbonAnimation#getTransitionIn",
     "method"
   ],
   [
-    "src/animation/netflix/netflixribbonanimation.js~netflixctaanimation#gettransitionout",
-    "class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation.html#instance-method-getTransitionOut",
-    "src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation#getTransitionOut",
+    "src/animation/netflix/netflixribbonanimation.js~netflixribbonanimation#gettransitionout",
+    "class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixRibbonAnimation.html#instance-method-getTransitionOut",
+    "src/animation/netflix/NetflixRibbonAnimation.js~NetflixRibbonAnimation#getTransitionOut",
     "method"
-  ],
-  [
-    "src/animation/until.js",
-    "file/src/animation/until.js.html",
-    "src/animation/until.js",
-    "file"
   ],
   [
     "src/component/autoentitycomponent.js",
@@ -843,30 +831,6 @@ window.esdocSearchIndex = [
     "src/component/autoentitycomponent.js~autoentitycomponent#onstart",
     "class/src/component/AutoEntityComponent.js~AutoEntityComponent.html#instance-method-onStart",
     "src/component/AutoEntityComponent.js~AutoEntityComponent#onStart",
-    "method"
-  ],
-  [
-    "src/component/chaincomponent.js",
-    "file/src/component/ChainComponent.js.html",
-    "src/component/ChainComponent.js",
-    "file"
-  ],
-  [
-    "src/component/chaincomponent.js~chaincomponent#_currentchain",
-    "class/src/component/ChainComponent.js~ChainComponent.html#instance-member-_currentChain",
-    "src/component/ChainComponent.js~ChainComponent#_currentChain",
-    "member"
-  ],
-  [
-    "src/component/chaincomponent.js~chaincomponent#chain",
-    "class/src/component/ChainComponent.js~ChainComponent.html#instance-member-chain",
-    "src/component/ChainComponent.js~ChainComponent#chain",
-    "member"
-  ],
-  [
-    "src/component/chaincomponent.js~chaincomponent#setentity",
-    "class/src/component/ChainComponent.js~ChainComponent.html#instance-method-setEntity",
-    "src/component/ChainComponent.js~ChainComponent#setEntity",
     "method"
   ],
   [
@@ -1641,6 +1605,12 @@ window.esdocSearchIndex = [
     "src/util/randbetween.js",
     "file/src/util/randBetween.js.html",
     "src/util/randBetween.js",
+    "file"
+  ],
+  [
+    "src/util/until.js",
+    "file/src/util/until.js.html",
+    "src/util/until.js",
     "file"
   ],
   [

@@ -1,46 +1,33 @@
 {
-  "coverage": "33.33%",
-  "expectCount": 192,
-  "actualCount": 64,
+  "coverage": "40.42%",
+  "expectCount": 188,
+  "actualCount": 76,
   "files": {
     "src/Entity.js": {
       "expectCount": 15,
-      "actualCount": 13,
+      "actualCount": 14,
       "undocumentLines": [
-        40,
-        182
+        186
       ]
     },
     "src/animation/AbstractAnimation.js": {
       "expectCount": 11,
-      "actualCount": 6,
-      "undocumentLines": [
-        11,
-        39,
-        45,
-        77,
-        83
-      ]
+      "actualCount": 11,
+      "undocumentLines": []
     },
     "src/animation/StaggerAnimation.js": {
       "expectCount": 3,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        4,
-        12
-      ]
+      "actualCount": 3,
+      "undocumentLines": []
     },
     "src/animation/netflix/NetflixBrandLogoAnimation.js": {
       "expectCount": 6,
-      "actualCount": 0,
+      "actualCount": 2,
       "undocumentLines": [
         3,
         4,
-        9,
-        23,
-        37,
-        41
+        45,
+        49
       ]
     },
     "src/animation/netflix/NetflixCTAAnimation.js": {
@@ -61,13 +48,6 @@
         32
       ]
     },
-    "src/animation/until.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
     "src/component/AutoEntityComponent.js": {
       "expectCount": 3,
       "actualCount": 0,
@@ -75,16 +55,6 @@
         6,
         7,
         11
-      ]
-    },
-    "src/component/ChainComponent.js": {
-      "expectCount": 4,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        4,
-        6,
-        12
       ]
     },
     "src/component/Component.js": {
@@ -239,10 +209,8 @@
     },
     "src/util/Browser.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/util/createStyle.js": {
       "expectCount": 1,
@@ -394,6 +362,13 @@
       ]
     },
     "src/util/randBetween.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/until.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [

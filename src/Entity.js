@@ -37,12 +37,16 @@ export default class Entity {
    */
   name = null;
 
-  constructor(name = null) {
+  /**
+   * Specify the name of the component
+   * @param {string} name
+   */
+  constructor(name = '') {
     this.name = name;
   }
 
   /**
-   *
+   * Will initialize all the added components.
    * @return {Promise<any>}
    */
   init() {
@@ -134,7 +138,7 @@ export default class Entity {
   }
 
   /**
-   *
+   * You can add a child entity
    * @param {Entity} entity
    */
   addChild(entity) {

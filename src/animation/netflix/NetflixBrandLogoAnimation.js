@@ -6,6 +6,10 @@ export default class NetflixBrandLogoAnimation extends AbstractAnimation {
     this.show();
   }
 
+  /**
+   * Will return the transition Timeline
+   * @return {TimelineLite}
+   */
   getTransitionIn(complete = () => {}) {
     const tl = new TimelineLite();
     tl.call(() => {
@@ -20,6 +24,10 @@ export default class NetflixBrandLogoAnimation extends AbstractAnimation {
     return tl;
   }
 
+  /**
+   * Will return the transition Timeline
+   * @return {TimelineLite}
+   */
   getTransitionOut(complete = () => {}) {
     console.log('getTransitionOut');
 

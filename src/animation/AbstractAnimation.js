@@ -1,5 +1,5 @@
 /**
- *
+ * Abstract class for all the transition animations.
  */
 export default class AbstractAnimation {
   /**
@@ -8,6 +8,10 @@ export default class AbstractAnimation {
    */
   element = null;
 
+  /**
+   *
+   * @param {null|Array<HTMLElement>|HTMLElement} element
+   */
   constructor(element) {
     if (element instanceof NodeList || element instanceof Array) {
       this.element = Array.from(element);
@@ -22,7 +26,6 @@ export default class AbstractAnimation {
    * Will Transition In
    * @return {Promise<void>}
    */
-
   async transitionIn() {
     return new Promise(resolve => this.getTransitionIn(resolve));
   }
@@ -31,18 +34,27 @@ export default class AbstractAnimation {
    * Will Transition Out
    * @return {Promise<void>}
    */
-
   async transitionOut() {
     return new Promise(resolve => this.getTransitionOut(resolve));
   }
 
-  getTransitionIn(complete) {
+  /**
+   *
+   * @param {Function} complete
+   * @return {TimelineLite}
+   */
+  getTransitionIn(complete = () => {}) {
     const tl = new TimelineLite();
     tl.call(complete);
     return tl;
   }
 
-  getTransitionOut(complete) {
+  /**
+   *
+   * @param {Function} complete
+   * @return {TimelineLite}
+   */
+  getTransitionOut(complete = () => {}) {
     const tl = new TimelineLite();
     tl.call(complete);
     return tl;
@@ -74,12 +86,20 @@ export default class AbstractAnimation {
     }
   }
 
+  /**
+   * Returns the duration if the transition in animation
+   * @return {number}
+   */
   getTransitionInDuration() {
     const tl = this.transitionIn();
     tl.pause();
     return tl.duration();
   }
 
+  /**
+   * Returns the duration if the transition in animation
+   * @return {number}
+   */
   getTransitionOutDuration() {
     const tl = this.transitionOut();
     tl.pause();

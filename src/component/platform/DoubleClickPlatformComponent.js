@@ -23,6 +23,7 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
       .then(() => {
         this.queryFullscreenDimensions();
         this.queryFullscreenSupport();
+
         this.setupEvents();
       });
   }

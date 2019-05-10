@@ -1,14 +1,8 @@
 window.esdocSearchIndex = [
   [
-    "@mediamonks/temple/src/util/$.js~$",
-    "function/index.html#static-function-$",
-    "<span>$</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/$.js</span>",
-    "function"
-  ],
-  [
-    "@mediamonks/temple/src/platforms/adform/adform.js~adform",
-    "class/src/platforms/adform/Adform.js~Adform.html",
-    "<span>Adform</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/platforms/adform/Adform.js</span>",
+    "@mediamonks/temple/src/animation/abstractanimation.js~abstractanimation",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html",
+    "<span>AbstractAnimation</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/animation/AbstractAnimation.js</span>",
     "class"
   ],
   [
@@ -39,12 +33,6 @@ window.esdocSearchIndex = [
     "@mediamonks/temple/src/component/configcomponent.js~configcomponent",
     "class/src/component/ConfigComponent.js~ConfigComponent.html",
     "<span>ConfigComponent</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/component/ConfigComponent.js</span>",
-    "class"
-  ],
-  [
-    "@mediamonks/temple/src/platforms/doubleclick/doubleclick.js~doubleclick",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html",
-    "<span>DoubleClick</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/platforms/doubleclick/DoubleClick.js</span>",
     "class"
   ],
   [
@@ -102,6 +90,24 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@mediamonks/temple/src/animation/netflix/netflixbrandlogoanimation.js~netflixbrandlogoanimation",
+    "class/src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation.html",
+    "<span>NetflixBrandLogoAnimation</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/animation/netflix/NetflixBrandLogoAnimation.js</span>",
+    "class"
+  ],
+  [
+    "@mediamonks/temple/src/animation/netflix/netflixctaanimation.js~netflixctaanimation",
+    "class/src/animation/netflix/NetflixCTAAnimation.js~NetflixCTAAnimation.html",
+    "<span>NetflixCTAAnimation</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/animation/netflix/NetflixCTAAnimation.js</span>",
+    "class"
+  ],
+  [
+    "@mediamonks/temple/src/animation/netflix/netflixribbonanimation.js~netflixctaanimation",
+    "class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation.html",
+    "<span>NetflixCTAAnimation</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/animation/netflix/NetflixRibbonAnimation.js</span>",
+    "class"
+  ],
+  [
     "@mediamonks/temple/src/component/platform/platformcomponent.js~platformcomponent",
     "class/src/component/platform/PlatformComponent.js~PlatformComponent.html",
     "<span>PlatformComponent</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/component/platform/PlatformComponent.js</span>",
@@ -114,9 +120,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "@mediamonks/temple/src/platforms/sizmek/sizmek.js~sizmek",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html",
-    "<span>Sizmek</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/platforms/sizmek/Sizmek.js</span>",
+    "@mediamonks/temple/src/animation/staggeranimation.js~staggeranimation",
+    "class/src/animation/StaggerAnimation.js~StaggerAnimation.html",
+    "<span>StaggerAnimation</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/animation/StaggerAnimation.js</span>",
     "class"
   ],
   [
@@ -126,21 +132,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "@mediamonks/temple/src/platforms/weborama/weborama.js~weborama",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html",
-    "<span>Weborama</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/platforms/weborama/Weborama.js</span>",
-    "class"
-  ],
-  [
     "@mediamonks/temple/src/util/createstyle.js~createstyle",
     "function/index.html#static-function-createStyle",
     "<span>createStyle</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/createStyle.js</span>",
-    "function"
-  ],
-  [
-    "@mediamonks/temple/src/util/debug.js~debug",
-    "function/index.html#static-function-debug",
-    "<span>debug</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/debug.js</span>",
     "function"
   ],
   [
@@ -186,9 +180,33 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@mediamonks/temple/src/util/getvideoduration.js~getvideoduration",
+    "function/index.html#static-function-getVideoDuration",
+    "<span>getVideoDuration</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/getVideoDuration.js</span>",
+    "function"
+  ],
+  [
+    "@mediamonks/temple/src/util/isribboncomplete.js~isribboncomplete",
+    "function/index.html#static-function-isRibbonComplete",
+    "<span>isRibbonComplete</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/isRibbonComplete.js</span>",
+    "function"
+  ],
+  [
     "@mediamonks/temple/src/util/isvalidurl.js~isvalidurl",
     "function/index.html#static-function-isValidURL",
     "<span>isValidURL</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/isValidURL.js</span>",
+    "function"
+  ],
+  [
+    "@mediamonks/temple/src/util/isvideocomplete.js~isvideocomplete",
+    "function/index.html#static-function-isVideoComplete",
+    "<span>isVideoComplete</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/isVideoComplete.js</span>",
+    "function"
+  ],
+  [
+    "@mediamonks/temple/src/util/isvideoending.js~isvideoending",
+    "function/index.html#static-function-isVideoEnding",
+    "<span>isVideoEnding</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/isVideoEnding.js</span>",
     "function"
   ],
   [
@@ -234,6 +252,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@mediamonks/temple/src/util/politeloadimages.js~politeloadimages",
+    "function/index.html#static-function-politeLoadImages",
+    "<span>politeLoadImages</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/politeLoadImages.js</span>",
+    "function"
+  ],
+  [
     "@mediamonks/temple/src/util/raf.js~raf",
     "function/index.html#static-function-raf",
     "<span>raf</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/raf.js</span>",
@@ -243,6 +267,24 @@ window.esdocSearchIndex = [
     "@mediamonks/temple/src/util/randbetween.js~randbetween",
     "function/index.html#static-function-randBetween",
     "<span>randBetween</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/randBetween.js</span>",
+    "function"
+  ],
+  [
+    "@mediamonks/temple/src/vendor/knockout/knockout.1.3.js~result",
+    "variable/index.html#static-variable-result",
+    "<span>result</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/vendor/knockout/knockout.1.3.js</span>",
+    "variable"
+  ],
+  [
+    "@mediamonks/temple/src/animation/until.js~until",
+    "function/index.html#static-function-until",
+    "<span>until</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/animation/until.js</span>",
+    "function"
+  ],
+  [
+    "@mediamonks/temple/src/util/netflix/untilvideoiscomplete.js~untilvideoiscomplete",
+    "function/index.html#static-function-untilVideoIsComplete",
+    "<span>untilVideoIsComplete</span> <span class=\"search-result-import-path\">@mediamonks/temple/src/util/netflix/untilVideoIsComplete.js</span>",
     "function"
   ],
   [
@@ -570,6 +612,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/entity.js~entity#destruct",
+    "class/src/Entity.js~Entity.html#instance-method-destruct",
+    "src/Entity.js~Entity#destruct",
+    "method"
+  ],
+  [
     "src/entity.js~entity#findbyname",
     "class/src/Entity.js~Entity.html#instance-method-findByName",
     "src/Entity.js~Entity#findByName",
@@ -616,6 +664,168 @@ window.esdocSearchIndex = [
     "class/src/Entity.js~Entity.html#instance-method-removeComponent",
     "src/Entity.js~Entity#removeComponent",
     "method"
+  ],
+  [
+    "src/animation/abstractanimation.js",
+    "file/src/animation/AbstractAnimation.js.html",
+    "src/animation/AbstractAnimation.js",
+    "file"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#constructor",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-constructor-constructor",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#constructor",
+    "method"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#element",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-member-element",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#element",
+    "member"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#gettransitionin",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-method-getTransitionIn",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#getTransitionIn",
+    "method"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#gettransitioninduration",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-method-getTransitionInDuration",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#getTransitionInDuration",
+    "method"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#gettransitionout",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-method-getTransitionOut",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#getTransitionOut",
+    "method"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#gettransitionoutduration",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-method-getTransitionOutDuration",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#getTransitionOutDuration",
+    "method"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#hide",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-method-hide",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#hide",
+    "method"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#show",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-method-show",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#show",
+    "method"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#transitionin",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-method-transitionIn",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#transitionIn",
+    "method"
+  ],
+  [
+    "src/animation/abstractanimation.js~abstractanimation#transitionout",
+    "class/src/animation/AbstractAnimation.js~AbstractAnimation.html#instance-method-transitionOut",
+    "src/animation/AbstractAnimation.js~AbstractAnimation#transitionOut",
+    "method"
+  ],
+  [
+    "src/animation/staggeranimation.js",
+    "file/src/animation/StaggerAnimation.js.html",
+    "src/animation/StaggerAnimation.js",
+    "file"
+  ],
+  [
+    "src/animation/staggeranimation.js~staggeranimation#gettransitionin",
+    "class/src/animation/StaggerAnimation.js~StaggerAnimation.html#instance-method-getTransitionIn",
+    "src/animation/StaggerAnimation.js~StaggerAnimation#getTransitionIn",
+    "method"
+  ],
+  [
+    "src/animation/staggeranimation.js~staggeranimation#gettransitionout",
+    "class/src/animation/StaggerAnimation.js~StaggerAnimation.html#instance-method-getTransitionOut",
+    "src/animation/StaggerAnimation.js~StaggerAnimation#getTransitionOut",
+    "method"
+  ],
+  [
+    "src/animation/netflix/netflixbrandlogoanimation.js",
+    "file/src/animation/netflix/NetflixBrandLogoAnimation.js.html",
+    "src/animation/netflix/NetflixBrandLogoAnimation.js",
+    "file"
+  ],
+  [
+    "src/animation/netflix/netflixbrandlogoanimation.js~netflixbrandlogoanimation#constructor",
+    "class/src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation.html#instance-constructor-constructor",
+    "src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation#constructor",
+    "method"
+  ],
+  [
+    "src/animation/netflix/netflixbrandlogoanimation.js~netflixbrandlogoanimation#gettransitionin",
+    "class/src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation.html#instance-method-getTransitionIn",
+    "src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation#getTransitionIn",
+    "method"
+  ],
+  [
+    "src/animation/netflix/netflixbrandlogoanimation.js~netflixbrandlogoanimation#gettransitioninduration",
+    "class/src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation.html#instance-method-getTransitionInDuration",
+    "src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation#getTransitionInDuration",
+    "method"
+  ],
+  [
+    "src/animation/netflix/netflixbrandlogoanimation.js~netflixbrandlogoanimation#gettransitionout",
+    "class/src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation.html#instance-method-getTransitionOut",
+    "src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation#getTransitionOut",
+    "method"
+  ],
+  [
+    "src/animation/netflix/netflixbrandlogoanimation.js~netflixbrandlogoanimation#gettransitionoutduration",
+    "class/src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation.html#instance-method-getTransitionOutDuration",
+    "src/animation/netflix/NetflixBrandLogoAnimation.js~NetflixBrandLogoAnimation#getTransitionOutDuration",
+    "method"
+  ],
+  [
+    "src/animation/netflix/netflixctaanimation.js",
+    "file/src/animation/netflix/NetflixCTAAnimation.js.html",
+    "src/animation/netflix/NetflixCTAAnimation.js",
+    "file"
+  ],
+  [
+    "src/animation/netflix/netflixctaanimation.js~netflixctaanimation#gettransitionin",
+    "class/src/animation/netflix/NetflixCTAAnimation.js~NetflixCTAAnimation.html#instance-method-getTransitionIn",
+    "src/animation/netflix/NetflixCTAAnimation.js~NetflixCTAAnimation#getTransitionIn",
+    "method"
+  ],
+  [
+    "src/animation/netflix/netflixctaanimation.js~netflixctaanimation#gettransitionout",
+    "class/src/animation/netflix/NetflixCTAAnimation.js~NetflixCTAAnimation.html#instance-method-getTransitionOut",
+    "src/animation/netflix/NetflixCTAAnimation.js~NetflixCTAAnimation#getTransitionOut",
+    "method"
+  ],
+  [
+    "src/animation/netflix/netflixribbonanimation.js",
+    "file/src/animation/netflix/NetflixRibbonAnimation.js.html",
+    "src/animation/netflix/NetflixRibbonAnimation.js",
+    "file"
+  ],
+  [
+    "src/animation/netflix/netflixribbonanimation.js~netflixctaanimation#gettransitionin",
+    "class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation.html#instance-method-getTransitionIn",
+    "src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation#getTransitionIn",
+    "method"
+  ],
+  [
+    "src/animation/netflix/netflixribbonanimation.js~netflixctaanimation#gettransitionout",
+    "class/src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation.html#instance-method-getTransitionOut",
+    "src/animation/netflix/NetflixRibbonAnimation.js~NetflixCTAAnimation#getTransitionOut",
+    "method"
+  ],
+  [
+    "src/animation/until.js",
+    "file/src/animation/until.js.html",
+    "src/animation/until.js",
+    "file"
   ],
   [
     "src/component/autoentitycomponent.js",
@@ -690,6 +900,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/component.js~component#hasrequiredcomponents",
+    "class/src/component/Component.js~Component.html#instance-method-hasRequiredComponents",
+    "src/component/Component.js~Component#hasRequiredComponents",
+    "method"
+  ],
+  [
     "src/component/component.js~component#init",
     "class/src/component/Component.js~Component.html#instance-method-init",
     "src/component/Component.js~Component#init",
@@ -744,9 +960,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/configcomponent.js~configcomponent#getconfig",
-    "class/src/component/ConfigComponent.js~ConfigComponent.html#instance-method-getConfig",
-    "src/component/ConfigComponent.js~ConfigComponent#getConfig",
+    "src/component/configcomponent.js~configcomponent#get",
+    "class/src/component/ConfigComponent.js~ConfigComponent.html#instance-method-get",
+    "src/component/ConfigComponent.js~ConfigComponent#get",
     "method"
   ],
   [
@@ -786,12 +1002,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/component/embedsvgcomponent.js~embedsvgcomponent#constructor",
-    "class/src/component/EmbedSVGComponent.js~EmbedSVGComponent.html#instance-constructor-constructor",
-    "src/component/EmbedSVGComponent.js~EmbedSVGComponent#constructor",
-    "method"
-  ],
-  [
     "src/component/embedsvgcomponent.js~embedsvgcomponent#init",
     "class/src/component/EmbedSVGComponent.js~EmbedSVGComponent.html#instance-method-init",
     "src/component/EmbedSVGComponent.js~EmbedSVGComponent#init",
@@ -804,10 +1014,40 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/embedsvgcomponent.js~embedsvgcomponent.requires",
+    "class/src/component/EmbedSVGComponent.js~EmbedSVGComponent.html#static-member-requires",
+    "src/component/EmbedSVGComponent.js~EmbedSVGComponent.requires",
+    "member"
+  ],
+  [
     "src/component/eventdispatchercomponent.js",
     "file/src/component/EventDispatcherComponent.js.html",
     "src/component/EventDispatcherComponent.js",
     "file"
+  ],
+  [
+    "src/component/eventdispatchercomponent.js~eventdispatchercomponent#_events",
+    "class/src/component/EventDispatcherComponent.js~EventDispatcherComponent.html#instance-member-_events",
+    "src/component/EventDispatcherComponent.js~EventDispatcherComponent#_events",
+    "member"
+  ],
+  [
+    "src/component/eventdispatchercomponent.js~eventdispatchercomponent#addeventlistener",
+    "class/src/component/EventDispatcherComponent.js~EventDispatcherComponent.html#instance-method-addEventListener",
+    "src/component/EventDispatcherComponent.js~EventDispatcherComponent#addEventListener",
+    "method"
+  ],
+  [
+    "src/component/eventdispatchercomponent.js~eventdispatchercomponent#dispatch",
+    "class/src/component/EventDispatcherComponent.js~EventDispatcherComponent.html#instance-method-dispatch",
+    "src/component/EventDispatcherComponent.js~EventDispatcherComponent#dispatch",
+    "method"
+  ],
+  [
+    "src/component/eventdispatchercomponent.js~eventdispatchercomponent#removeeventlistener",
+    "class/src/component/EventDispatcherComponent.js~EventDispatcherComponent.html#instance-method-removeEventListener",
+    "src/component/EventDispatcherComponent.js~EventDispatcherComponent#removeEventListener",
+    "method"
   ],
   [
     "src/component/expandabledoubleclickcomponent.js",
@@ -930,16 +1170,16 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/knockoutcomponent.js~knockoutcomponent.requires",
+    "class/src/component/KnockoutComponent.js~KnockoutComponent.html#static-member-requires",
+    "src/component/KnockoutComponent.js~KnockoutComponent.requires",
+    "member"
+  ],
+  [
     "src/component/refscomponent.js",
     "file/src/component/RefsComponent.js.html",
     "src/component/RefsComponent.js",
     "file"
-  ],
-  [
-    "src/component/refscomponent.js~refscomponent#constructor",
-    "class/src/component/RefsComponent.js~RefsComponent.html#instance-constructor-constructor",
-    "src/component/RefsComponent.js~RefsComponent#constructor",
-    "method"
   ],
   [
     "src/component/refscomponent.js~refscomponent#get",
@@ -957,6 +1197,12 @@ window.esdocSearchIndex = [
     "src/component/refscomponent.js~refscomponent#refs",
     "class/src/component/RefsComponent.js~RefsComponent.html#instance-member-refs",
     "src/component/RefsComponent.js~RefsComponent#refs",
+    "member"
+  ],
+  [
+    "src/component/refscomponent.js~refscomponent.requires",
+    "class/src/component/RefsComponent.js~RefsComponent.html#static-member-requires",
+    "src/component/RefsComponent.js~RefsComponent.requires",
     "member"
   ],
   [
@@ -982,6 +1228,18 @@ window.esdocSearchIndex = [
     "file/src/component/platform/DoubleClickPlatformComponent.js.html",
     "src/component/platform/DoubleClickPlatformComponent.js",
     "file"
+  ],
+  [
+    "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#_queryfullscreendimensionspromise",
+    "class/src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent.html#instance-member-_queryFullscreenDimensionsPromise",
+    "src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent#_queryFullscreenDimensionsPromise",
+    "member"
+  ],
+  [
+    "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#_queryfullscreensupportpromise",
+    "class/src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent.html#instance-member-_queryFullscreenSupportPromise",
+    "src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent#_queryFullscreenSupportPromise",
+    "member"
   ],
   [
     "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#addvideotracking",
@@ -1038,12 +1296,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#handlefullscreendimensions",
-    "class/src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent.html#instance-member-handleFullscreenDimensions",
-    "src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent#handleFullscreenDimensions",
-    "member"
-  ],
-  [
     "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#handlefullscreenexpandfinish",
     "class/src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent.html#instance-member-handleFullscreenExpandFinish",
     "src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent#handleFullscreenExpandFinish",
@@ -1053,12 +1305,6 @@ window.esdocSearchIndex = [
     "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#handlefullscreenexpandstart",
     "class/src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent.html#instance-member-handleFullscreenExpandStart",
     "src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent#handleFullscreenExpandStart",
-    "member"
-  ],
-  [
-    "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#handlefullscreensupport",
-    "class/src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent.html#instance-member-handleFullscreenSupport",
-    "src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent#handleFullscreenSupport",
     "member"
   ],
   [
@@ -1110,6 +1356,18 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#queryfullscreendimensions",
+    "class/src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent.html#instance-method-queryFullscreenDimensions",
+    "src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent#queryFullscreenDimensions",
+    "method"
+  ],
+  [
+    "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#queryfullscreensupport",
+    "class/src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent.html#instance-method-queryFullscreenSupport",
+    "src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent#queryFullscreenSupport",
+    "method"
+  ],
+  [
     "src/component/platform/doubleclickplatformcomponent.js~doubleclickplatformcomponent#setupevents",
     "class/src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent.html#instance-method-setupEvents",
     "src/component/platform/DoubleClickPlatformComponent.js~DoubleClickPlatformComponent#setupEvents",
@@ -1126,12 +1384,6 @@ window.esdocSearchIndex = [
     "file/src/component/platform/MonetPlatformComponent.js.html",
     "src/component/platform/MonetPlatformComponent.js",
     "file"
-  ],
-  [
-    "src/component/platform/monetplatformcomponent.js~monetplatformcomponent#constructor",
-    "class/src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent.html#instance-constructor-constructor",
-    "src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent#constructor",
-    "method"
   ],
   [
     "src/component/platform/monetplatformcomponent.js~monetplatformcomponent#dommonetintegrator",
@@ -1153,9 +1405,9 @@ window.esdocSearchIndex = [
   ],
   [
     "src/component/platform/monetplatformcomponent.js~monetplatformcomponent#gotoexit",
-    "class/src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent.html#instance-method-gotoExit",
+    "class/src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent.html#instance-member-gotoExit",
     "src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent#gotoExit",
-    "method"
+    "member"
   ],
   [
     "src/component/platform/monetplatformcomponent.js~monetplatformcomponent#init",
@@ -1176,10 +1428,22 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/platform/monetplatformcomponent.js~monetplatformcomponent#setimpressionpixel",
+    "class/src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent.html#instance-method-setImpressionPixel",
+    "src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent#setImpressionPixel",
+    "method"
+  ],
+  [
     "src/component/platform/monetplatformcomponent.js~monetplatformcomponent#webcomponentready",
     "class/src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent.html#instance-method-webComponentReady",
     "src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent#webComponentReady",
     "method"
+  ],
+  [
+    "src/component/platform/monetplatformcomponent.js~monetplatformcomponent.requires",
+    "class/src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent.html#static-member-requires",
+    "src/component/platform/MonetPlatformComponent.js~MonetPlatformComponent.requires",
+    "member"
   ],
   [
     "src/component/platform/platformcomponent.js",
@@ -1230,258 +1494,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/platforms/adform/adform.js",
-    "file/src/platforms/adform/Adform.js.html",
-    "src/platforms/adform/Adform.js",
-    "file"
-  ],
-  [
-    "src/platforms/adform/adform.js~adform#_pageloaded",
-    "class/src/platforms/adform/Adform.js~Adform.html#instance-method-_pageLoaded",
-    "src/platforms/adform/Adform.js~Adform#_pageLoaded",
-    "method"
-  ],
-  [
-    "src/platforms/adform/adform.js~adform#_pageready",
-    "class/src/platforms/adform/Adform.js~Adform.html#instance-method-_pageReady",
-    "src/platforms/adform/Adform.js~Adform#_pageReady",
-    "method"
-  ],
-  [
-    "src/platforms/adform/adform.js~adform#_platform",
-    "class/src/platforms/adform/Adform.js~Adform.html#instance-member-_platform",
-    "src/platforms/adform/Adform.js~Adform#_platform",
-    "member"
-  ],
-  [
-    "src/platforms/adform/adform.js~adform#_trackedevents",
-    "class/src/platforms/adform/Adform.js~Adform.html#instance-member-_trackedEvents",
-    "src/platforms/adform/Adform.js~Adform#_trackedEvents",
-    "member"
-  ],
-  [
-    "src/platforms/adform/adform.js~adform#_tracker",
-    "class/src/platforms/adform/Adform.js~Adform.html#instance-method-_tracker",
-    "src/platforms/adform/Adform.js~Adform#_tracker",
-    "method"
-  ],
-  [
-    "src/platforms/adform/adform.js~adform#constructor",
-    "class/src/platforms/adform/Adform.js~Adform.html#instance-constructor-constructor",
-    "src/platforms/adform/Adform.js~Adform#constructor",
-    "method"
-  ],
-  [
-    "src/platforms/adform/adform.js~adform#exit",
-    "class/src/platforms/adform/Adform.js~Adform.html#instance-method-exit",
-    "src/platforms/adform/Adform.js~Adform#exit",
-    "method"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js",
-    "file/src/platforms/doubleclick/DoubleClick.js.html",
-    "src/platforms/doubleclick/DoubleClick.js",
-    "file"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#_addexitevents",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-method-_addExitEvents",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#_addExitEvents",
-    "method"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#_pageloaded",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-method-_pageLoaded",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#_pageLoaded",
-    "method"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#_pageready",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-method-_pageReady",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#_pageReady",
-    "method"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#_platform",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-member-_platform",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#_platform",
-    "member"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#_trackedevents",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-member-_trackedEvents",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#_trackedEvents",
-    "member"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#_tracker",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-method-_tracker",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#_tracker",
-    "method"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#constructor",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-constructor-constructor",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#constructor",
-    "method"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#defaultexiturl",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-member-defaultExitURL",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#defaultExitURL",
-    "member"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#exit",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-method-exit",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#exit",
-    "method"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#exiturls",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-member-exitURLs",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#exitURLs",
-    "member"
-  ],
-  [
-    "src/platforms/doubleclick/doubleclick.js~doubleclick#setvideotracking",
-    "class/src/platforms/doubleclick/DoubleClick.js~DoubleClick.html#instance-method-setVideoTracking",
-    "src/platforms/doubleclick/DoubleClick.js~DoubleClick#setVideoTracking",
-    "method"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js",
-    "file/src/platforms/sizmek/Sizmek.js.html",
-    "src/platforms/sizmek/Sizmek.js",
-    "file"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js~sizmek#_pageloaded",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html#instance-method-_pageLoaded",
-    "src/platforms/sizmek/Sizmek.js~Sizmek#_pageLoaded",
-    "method"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js~sizmek#_pageready",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html#instance-method-_pageReady",
-    "src/platforms/sizmek/Sizmek.js~Sizmek#_pageReady",
-    "method"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js~sizmek#_platform",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html#instance-member-_platform",
-    "src/platforms/sizmek/Sizmek.js~Sizmek#_platform",
-    "member"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js~sizmek#_trackedevents",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html#instance-member-_trackedEvents",
-    "src/platforms/sizmek/Sizmek.js~Sizmek#_trackedEvents",
-    "member"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js~sizmek#_tracker",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html#instance-method-_tracker",
-    "src/platforms/sizmek/Sizmek.js~Sizmek#_tracker",
-    "method"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js~sizmek#constructor",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html#instance-constructor-constructor",
-    "src/platforms/sizmek/Sizmek.js~Sizmek#constructor",
-    "method"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js~sizmek#defaultexiturl",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html#instance-member-defaultExitURL",
-    "src/platforms/sizmek/Sizmek.js~Sizmek#defaultExitURL",
-    "member"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js~sizmek#exit",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html#instance-method-exit",
-    "src/platforms/sizmek/Sizmek.js~Sizmek#exit",
-    "method"
-  ],
-  [
-    "src/platforms/sizmek/sizmek.js~sizmek#exiturls",
-    "class/src/platforms/sizmek/Sizmek.js~Sizmek.html#instance-member-exitURLs",
-    "src/platforms/sizmek/Sizmek.js~Sizmek#exitURLs",
-    "member"
-  ],
-  [
-    "src/platforms/weborama/weborama.js",
-    "file/src/platforms/weborama/Weborama.js.html",
-    "src/platforms/weborama/Weborama.js",
-    "file"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#_pageloaded",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-method-_pageLoaded",
-    "src/platforms/weborama/Weborama.js~Weborama#_pageLoaded",
-    "method"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#_pageready",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-method-_pageReady",
-    "src/platforms/weborama/Weborama.js~Weborama#_pageReady",
-    "method"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#_platform",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-member-_platform",
-    "src/platforms/weborama/Weborama.js~Weborama#_platform",
-    "member"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#_trackedevents",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-member-_trackedEvents",
-    "src/platforms/weborama/Weborama.js~Weborama#_trackedEvents",
-    "member"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#_tracker",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-method-_tracker",
-    "src/platforms/weborama/Weborama.js~Weborama#_tracker",
-    "method"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#constructor",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-constructor-constructor",
-    "src/platforms/weborama/Weborama.js~Weborama#constructor",
-    "method"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#defaultexiturl",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-member-defaultExitURL",
-    "src/platforms/weborama/Weborama.js~Weborama#defaultExitURL",
-    "member"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#exit",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-method-exit",
-    "src/platforms/weborama/Weborama.js~Weborama#exit",
-    "method"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#exiturls",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-member-exitURLs",
-    "src/platforms/weborama/Weborama.js~Weborama#exitURLs",
-    "member"
-  ],
-  [
-    "src/platforms/weborama/weborama.js~weborama#setvideotracking",
-    "class/src/platforms/weborama/Weborama.js~Weborama.html#instance-method-setVideoTracking",
-    "src/platforms/weborama/Weborama.js~Weborama#setVideoTracking",
-    "method"
-  ],
-  [
-    "src/util/$.js",
-    "file/src/util/$.js.html",
-    "src/util/$.js",
-    "file"
-  ],
-  [
     "src/util/browser.js",
     "file/src/util/Browser.js.html",
     "src/util/Browser.js",
@@ -1491,12 +1503,6 @@ window.esdocSearchIndex = [
     "src/util/createstyle.js",
     "file/src/util/createStyle.js.html",
     "src/util/createStyle.js",
-    "file"
-  ],
-  [
-    "src/util/debug.js",
-    "file/src/util/debug.js.html",
-    "src/util/debug.js",
     "file"
   ],
   [
@@ -1542,9 +1548,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/util/getvideoduration.js",
+    "file/src/util/getVideoDuration.js.html",
+    "src/util/getVideoDuration.js",
+    "file"
+  ],
+  [
+    "src/util/isribboncomplete.js",
+    "file/src/util/isRibbonComplete.js.html",
+    "src/util/isRibbonComplete.js",
+    "file"
+  ],
+  [
     "src/util/isvalidurl.js",
     "file/src/util/isValidURL.js.html",
     "src/util/isValidURL.js",
+    "file"
+  ],
+  [
+    "src/util/isvideocomplete.js",
+    "file/src/util/isVideoComplete.js.html",
+    "src/util/isVideoComplete.js",
+    "file"
+  ],
+  [
+    "src/util/isvideoending.js",
+    "file/src/util/isVideoEnding.js.html",
+    "src/util/isVideoEnding.js",
     "file"
   ],
   [
@@ -1587,6 +1617,18 @@ window.esdocSearchIndex = [
     "src/util/loadtext.js",
     "file/src/util/loadText.js.html",
     "src/util/loadText.js",
+    "file"
+  ],
+  [
+    "src/util/netflix/untilvideoiscomplete.js",
+    "file/src/util/netflix/untilVideoIsComplete.js.html",
+    "src/util/netflix/untilVideoIsComplete.js",
+    "file"
+  ],
+  [
+    "src/util/politeloadimages.js",
+    "file/src/util/politeLoadImages.js.html",
+    "src/util/politeLoadImages.js",
     "file"
   ],
   [

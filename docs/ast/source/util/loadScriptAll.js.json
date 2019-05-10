@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 188,
+  "end": 189,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 188,
+    "end": 189,
     "loc": {
       "start": {
         "line": 1,
@@ -161,7 +161,7 @@
           },
           "extra": {
             "rawValue": "./loadAll",
-            "raw": "\"./loadAll\""
+            "raw": "'./loadAll'"
           },
           "value": "./loadAll"
         }
@@ -169,7 +169,7 @@
       {
         "type": "ExportDefaultDeclaration",
         "start": 73,
-        "end": 187,
+        "end": 188,
         "loc": {
           "start": {
             "line": 4,
@@ -183,7 +183,7 @@
         "declaration": {
           "type": "FunctionDeclaration",
           "start": 88,
-          "end": 187,
+          "end": 188,
           "loc": {
             "start": {
               "line": 4,
@@ -284,7 +284,7 @@
           "body": {
             "type": "BlockStatement",
             "start": 137,
-            "end": 187,
+            "end": 188,
             "loc": {
               "start": {
                 "line": 4,
@@ -299,7 +299,7 @@
               {
                 "type": "ReturnStatement",
                 "start": 141,
-                "end": 185,
+                "end": 186,
                 "loc": {
                   "start": {
                     "line": 5,
@@ -307,7 +307,7 @@
                   },
                   "end": {
                     "line": 5,
-                    "column": 46
+                    "column": 47
                   }
                 },
                 "argument": {
@@ -1227,6 +1227,32 @@
     },
     {
       "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 185,
+      "end": 186,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 46
+        },
+        "end": {
+          "line": 5,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": {
         "label": "}",
         "beforeExpr": false,
         "startsExpr": false,
@@ -1237,8 +1263,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 186,
-      "end": 187,
+      "start": 187,
+      "end": 188,
       "loc": {
         "start": {
           "line": 6,
@@ -1263,8 +1289,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 188,
-      "end": 188,
+      "start": 189,
+      "end": 189,
       "loc": {
         "start": {
           "line": 7,

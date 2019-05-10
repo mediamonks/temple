@@ -1,15 +1,71 @@
 {
-  "coverage": "22.87%",
-  "expectCount": 188,
-  "actualCount": 43,
+  "coverage": "33.33%",
+  "expectCount": 192,
+  "actualCount": 64,
   "files": {
     "src/Entity.js": {
-      "expectCount": 14,
-      "actualCount": 11,
+      "expectCount": 15,
+      "actualCount": 13,
       "undocumentLines": [
+        40,
+        182
+      ]
+    },
+    "src/animation/AbstractAnimation.js": {
+      "expectCount": 11,
+      "actualCount": 6,
+      "undocumentLines": [
+        11,
         39,
-        43,
-        123
+        45,
+        77,
+        83
+      ]
+    },
+    "src/animation/StaggerAnimation.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        12
+      ]
+    },
+    "src/animation/netflix/NetflixBrandLogoAnimation.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        9,
+        23,
+        37,
+        41
+      ]
+    },
+    "src/animation/netflix/NetflixCTAAnimation.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        11
+      ]
+    },
+    "src/animation/netflix/NetflixRibbonAnimation.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        32
+      ]
+    },
+    "src/animation/until.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
       ]
     },
     "src/component/AutoEntityComponent.js": {
@@ -32,12 +88,13 @@
       ]
     },
     "src/component/Component.js": {
-      "expectCount": 11,
+      "expectCount": 12,
       "actualCount": 8,
       "undocumentLines": [
         1,
         2,
-        32
+        32,
+        61
       ]
     },
     "src/component/ConfigComponent.js": {
@@ -52,12 +109,11 @@
     },
     "src/component/ElementComponent.js": {
       "expectCount": 5,
-      "actualCount": 1,
+      "actualCount": 2,
       "undocumentLines": [
-        3,
-        4,
-        6,
-        9
+        7,
+        9,
+        12
       ]
     },
     "src/component/EmbedSVGComponent.js": {
@@ -65,47 +121,51 @@
       "actualCount": 1,
       "undocumentLines": [
         9,
-        13,
-        34
+        11,
+        35
       ]
     },
     "src/component/EventDispatcherComponent.js": {
-      "expectCount": 1,
-      "actualCount": 0,
+      "expectCount": 9,
+      "actualCount": 4,
       "undocumentLines": [
-        3
+        3,
+        4,
+        5,
+        6,
+        16
       ]
     },
     "src/component/ExpandableDoubleClickComponent.js": {
       "expectCount": 16,
       "actualCount": 0,
       "undocumentLines": [
+        7,
         8,
-        9,
+        10,
+        11,
         12,
         13,
         14,
-        15,
         16,
-        18,
-        29,
-        37,
-        56,
-        60,
+        31,
+        39,
         64,
-        84,
-        101,
-        107
+        68,
+        72,
+        92,
+        109,
+        115
       ]
     },
     "src/component/KnockoutComponent.js": {
-      "expectCount": 4,
-      "actualCount": 0,
+      "expectCount": 5,
+      "actualCount": 1,
       "undocumentLines": [
-        5,
-        6,
-        8,
-        11
+        9,
+        11,
+        13,
+        16
       ]
     },
     "src/component/RefsComponent.js": {
@@ -115,8 +175,8 @@
         4,
         5,
         7,
-        11,
-        28
+        9,
+        26
       ]
     },
     "src/component/VideoComponent.js": {
@@ -129,35 +189,37 @@
       ]
     },
     "src/component/platform/DoubleClickPlatformComponent.js": {
-      "expectCount": 24,
-      "actualCount": 11,
+      "expectCount": 26,
+      "actualCount": 12,
       "undocumentLines": [
-        19,
-        20,
-        22,
+        7,
+        8,
+        10,
         31,
-        49,
+        39,
         96,
-        101,
-        123,
-        128,
-        157,
-        171,
-        185,
-        190
+        115,
+        135,
+        140,
+        162,
+        167,
+        197,
+        211,
+        216
       ]
     },
     "src/component/platform/MonetPlatformComponent.js": {
-      "expectCount": 10,
+      "expectCount": 11,
       "actualCount": 3,
       "undocumentLines": [
-        35,
-        38,
-        53,
-        114,
-        120,
-        150,
-        159
+        16,
+        25,
+        30,
+        98,
+        104,
+        134,
+        143,
+        162
       ]
     },
     "src/component/platform/PlatformComponent.js": {
@@ -169,82 +231,10 @@
     },
     "src/event/EventDispatcher.js": {
       "expectCount": 5,
-      "actualCount": 2,
+      "actualCount": 3,
       "undocumentLines": [
-        1,
-        2,
-        4
-      ]
-    },
-    "src/platforms/adform/Adform.js": {
-      "expectCount": 8,
-      "actualCount": 1,
-      "undocumentLines": [
-        15,
-        22,
-        35,
-        46,
-        51,
-        56,
-        59
-      ]
-    },
-    "src/platforms/doubleclick/DoubleClick.js": {
-      "expectCount": 12,
-      "actualCount": 0,
-      "undocumentLines": [
-        4,
         5,
-        7,
-        8,
-        14,
-        27,
-        45,
-        53,
-        63,
-        68,
-        71,
-        81
-      ]
-    },
-    "src/platforms/sizmek/Sizmek.js": {
-      "expectCount": 10,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        4,
-        6,
-        7,
-        13,
-        24,
-        31,
-        41,
-        45,
-        47
-      ]
-    },
-    "src/platforms/weborama/Weborama.js": {
-      "expectCount": 11,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5,
-        8,
-        9,
-        15,
-        24,
-        30,
-        49,
-        54,
-        59,
-        62
-      ]
-    },
-    "src/util/$.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
+        7
       ]
     },
     "src/util/Browser.js": {
@@ -259,19 +249,11 @@
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/util/debug.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
     "src/util/findElementByCSS.js": {
       "expectCount": 2,
-      "actualCount": 0,
+      "actualCount": 1,
       "undocumentLines": [
-        3,
-        5
+        3
       ]
     },
     "src/util/findElementsByCSS.js": {
@@ -283,20 +265,17 @@
     },
     "src/util/fitText.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/util/getEnabler.js": {
-      "expectCount": 5,
+      "expectCount": 4,
       "actualCount": 0,
       "undocumentLines": [
         1,
         2,
         3,
-        4,
-        6
+        5
       ]
     },
     "src/util/getGlobalStyleSheet.js": {
@@ -316,10 +295,20 @@
     },
     "src/util/getStyleRuleValue.js": {
       "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/util/getVideoDuration.js": {
+      "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
         1
       ]
+    },
+    "src/util/isRibbonComplete.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/util/isValidURL.js": {
       "expectCount": 1,
@@ -327,6 +316,18 @@
       "undocumentLines": [
         1
       ]
+    },
+    "src/util/isVideoComplete.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/isVideoEnding.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/util/load.js": {
       "expectCount": 5,
@@ -373,6 +374,18 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/util/netflix/untilVideoIsComplete.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/util/politeLoadImages.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/util/raf.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -391,8 +404,15 @@
       "expectCount": 2,
       "actualCount": 0,
       "undocumentLines": [
-        2,
-        3
+        1,
+        2
+      ]
+    },
+    "src/vendor/knockout/knockout.1.3.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        7
       ]
     }
   }

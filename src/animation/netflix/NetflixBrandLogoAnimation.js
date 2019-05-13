@@ -3,15 +3,13 @@ import AbstractAnimation from '../AbstractAnimation';
 export default class NetflixBrandLogoAnimation extends AbstractAnimation {
   constructor(element) {
     super(element);
+    TweenLite.set(this.element, { autoAlpha: 0 });
     this.show();
   }
 
-  /**
-   * Will return the transition Timeline
-   * @return {TimelineLite}
-   */
   getTransitionIn(complete = () => {}) {
     const tl = new TimelineLite();
+    tl.to(this.element, 0.8, { autoAlpha: 1 });
     tl.call(() => {
       this.show();
       // this.element.progress(0);
@@ -24,10 +22,6 @@ export default class NetflixBrandLogoAnimation extends AbstractAnimation {
     return tl;
   }
 
-  /**
-   * Will return the transition Timeline
-   * @return {TimelineLite}
-   */
   getTransitionOut(complete = () => {}) {
     console.log('getTransitionOut');
 

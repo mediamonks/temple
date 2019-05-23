@@ -12,7 +12,7 @@ export default class NetflixCTAAnimation extends AbstractAnimation {
     const tl = new TimelineLite();
     tl.from(this.element, 1, { width: 0 });
     tl.call(() => this.hide());
-    tl.call(() => complete);
+    tl.call(complete);
     return tl;
   }
 }

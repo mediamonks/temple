@@ -23,7 +23,7 @@ export default class NetflixBrandLogoAnimation extends AbstractAnimation {
     });
     // tl.call(() => this.element.play())
     tl.call(() => {}, [], null, this.element.animDuration);
-    tl.call(() => complete);
+    tl.call(complete);
     return tl;
   }
 
@@ -40,7 +40,7 @@ export default class NetflixBrandLogoAnimation extends AbstractAnimation {
     });
     // tl.call(() => this.element.play())
     tl.call(() => {}, [], null, this.element.animDuration);
-    tl.call(() => complete);
+    tl.call(complete);
     return tl;
   }
 

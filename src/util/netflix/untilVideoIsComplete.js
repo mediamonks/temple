@@ -1,6 +1,6 @@
 export default function untilVideoIsComplete(domNetflixVideo, durationFromEnd = 0) {
   return new Promise(resolve => {
-    const onComplete = e => {
+    const onComplete = () => {
       resolve();
       domNetflixVideo.removeEventListener('video-complete', onComplete);
       domNetflixVideo.removeEventListener('video-close', onComplete);

@@ -22,7 +22,7 @@ export default function findElementByCSS(
   const elementsToSearch = basicElementsToSearch.concat(customTypes);
 
   if (element && element.childNodes && element.childNodes.length > 0) {
-    const children = Array.from(element.querySelectorAll('> *'));
+    const children = element.childNodes;
 
     children.forEach(child => {
       if (

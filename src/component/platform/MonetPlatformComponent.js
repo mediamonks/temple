@@ -152,11 +152,7 @@ export default class MonetPlatformComponent extends PlatformComponent {
       url = monetData.rootAssets['url.Exit_URL_Desktop'].url;
     }
 
-    if (isValidURL(url)) {
-      Enabler.exitOverride('Default Exit', url);
-    } else {
-      Enabler.exitOverride('Default Exit', null);
-    }
+    Enabler.exitOverride('Default Exit', url);
   };
 
   setImpressionPixel(type, skills) {

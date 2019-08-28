@@ -1,3 +1,13 @@
+/**
+ *
+ * @type {{
+ *  isMobile: boolean
+ *  isiOS: boolean
+ *  isiOS9up: boolean
+ *  isiPad: boolean
+ *  isSafari: boolean
+ * }}
+ */
 const Browser = {};
 Browser.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent,

@@ -39,7 +39,6 @@ export default function getStyleRuleValue(style, selector, sheet) {
       result = selector;
     }
 
-
   });
 
   return result;

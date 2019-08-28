@@ -4,19 +4,6 @@ import EventDispatcherComponent from '../EventDispatcherComponent';
 import DoubleClickEventEnum from '../../event/DoubleClickEventEnum';
 import getEnabler from '../../util/getEnabler';
 
-// studio.events.StudioEvent.INIT,
-// studio.events.StudioEvent.VISIBLE,
-// studio.events.StudioEvent.EXPAND_START
-// studio.events.StudioEvent.EXPAND_FINISH
-// studio.events.StudioEvent.COLLAPSE_START
-// studio.events.StudioEvent.COLLAPSE_FINISH
-// studio.events.StudioEvent.FULLSCREEN_SUPPORT
-// studio.events.StudioEvent.FULLSCREEN_DIMENSIONS
-// studio.events.StudioEvent.FULLSCREEN_EXPAND_START
-// studio.events.StudioEvent.FULLSCREEN_EXPAND_FINISH
-// studio.events.StudioEvent.FULLSCREEN_COLLAPSE_START
-// studio.events.StudioEvent.FULLSCREEN_COLLAPSE_FINISH
-
 export default class DoubleClickPlatformComponent extends PlatformComponent {
   static requires = [EventDispatcherComponent];
 
@@ -24,19 +11,29 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
     return super
       .init()
       .then(() => this.loadEnabler())
-      .then(Enabler => {
-        Enabler.addEventListener(studio.events.StudioEvent.EXIT, this.handleExit);
+      .then(() => {
+        return new Promise(resolve => {
+          if (!Enabler.isInitialized()) {
+            Enabler.addEventListener(studio.events.StudioEvent.INIT, resolve);
+          } else {
+            resolve();
+          }
+        });
+      })
+      .then(() => {
+        this.queryFullscreenDimensions();
+        this.queryFullscreenSupport();
+
+        this.setupEvents();
       });
   }
 
-  loadEnabler() {
-    return Promise.resolve(true)
-      .then(() => {
-        if (!Enabler) {
-          return loadScript('https://s0.2mdn.net/ads/studio/Enabler.js');
-        }
-      })
-      .then(() => getEnabler());
+  async loadEnabler() {
+    if (!Enabler) {
+      await loadScript('https://s0.2mdn.net/ads/studio/Enabler.js');
+    }
+
+    return getEnabler();
   }
 
   setupEvents() {
@@ -82,30 +79,49 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
     studio.video.Reporter.attach(id, videoElement);
   }
 
+  /**
+   * Indicates the maximum dimensions available to the creative for fullscreen expansion, as
+   * well as the offset of the original creative.
+   *
+   * If width and height are zero, it means the ad cannot expand to fullscreen. (note that in these
+   * circumstances, any studio.events.FULLSCREEN_SUPPORT events will have "supported" set to false).
+   * If width and height are not present, it means display width and height cannot be determined in
+   * the current ad rendering environment (for example, MRAID 1.0). If left and top are -1, it means
+   * that the location of the ad could not be determined.
+   *
+   * @return {Promise<{width, height, top, left}>}
+   */
   queryFullscreenDimensions() {
-    return new Promise(resolve => {
-      const fn = data => {
-        Enabler.removeEventListener(studio.events.StudioEvent.FULLSCREEN_SUPPORT, fn);
-        resolve(data);
-      };
-      Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_SUPPORT, fn);
-    });
+    if (!this._queryFullscreenDimensionsPromise) {
+      this._queryFullscreenDimensionsPromise = new Promise(resolve => {
+        const fn = data => {
+          Enabler.removeEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
+          resolve(data);
+        };
+        Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
+      });
+    }
+
+    return this._queryFullscreenDimensionsPromise;
   }
 
   /**
-   * Indicates the maximum dimensions available to the creative for
-   * fullscreen expansion, as well as the offset of the original creative.
+   * inform the creative as to whether fullscreen is supported.
    *
    * @return {Promise<boolean>}
    */
-  queryFullscreenDimensions() {
-    return new Promise(resolve => {
-      const fn = data => {
-        Enabler.removeEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
-        resolve(data);
-      };
-      Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
-    });
+  queryFullscreenSupport() {
+    if (!this._queryFullscreenSupportPromise) {
+      this._queryFullscreenSupportPromise = new Promise(resolve => {
+        const fn = data => {
+          Enabler.removeEventListener(studio.events.StudioEvent.FULLSCREEN_SUPPORT, fn);
+          resolve(data);
+        };
+        Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_SUPPORT, fn);
+      });
+    }
+
+    return this._queryFullscreenSupportPromise;
   }
 
   /**
@@ -113,17 +129,17 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleExit = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_EXIT);
+    dispatcher.dispatch(DoubleClickEventEnum.EXIT);
   };
 
   handleInit = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_INIT);
+    dispatcher.dispatch(DoubleClickEventEnum.INIT);
   };
 
   handleVisible = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_VISIBLE);
+    dispatcher.dispatch(DoubleClickEventEnum.VISIBLE);
   };
 
   /**
@@ -132,7 +148,7 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleExpandStart = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_EXPAND_START);
+    dispatcher.dispatch(DoubleClickEventEnum.EXPAND_START);
   };
 
   /**
@@ -140,17 +156,17 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleExpandFinish = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_EXPAND_FINISH);
+    dispatcher.dispatch(DoubleClickEventEnum.EXPAND_FINISH);
   };
 
   handleCollapse = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_COLLAPSE);
+    dispatcher.dispatch(DoubleClickEventEnum.COLLAPSE);
   };
 
   handleCollapseStart = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_COLLAPSE_START);
+    dispatcher.dispatch(DoubleClickEventEnum.COLLAPSE_START);
   };
 
   /**
@@ -159,7 +175,7 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleHidden = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_HIDDEN);
+    dispatcher.dispatch(DoubleClickEventEnum.HIDDEN);
   };
 
   /**
@@ -167,7 +183,7 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleInteraction = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_INTERACTION);
+    dispatcher.dispatch(DoubleClickEventEnum.INTERACTION);
   };
 
   /**
@@ -175,12 +191,12 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleOrientation = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_ORIENTATION);
+    dispatcher.dispatch(DoubleClickEventEnum.ORIENTATION);
   };
 
   handlePageLoaded = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_PAGE_LOADED);
+    dispatcher.dispatch(DoubleClickEventEnum.PAGE_LOADED);
   };
 
   /**
@@ -189,17 +205,17 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleCollapseFinish = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_COLLAPSE_FINISH);
+    dispatcher.dispatch(DoubleClickEventEnum.COLLAPSE_FINISH);
   };
 
   handleFullscreenExpandStart = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_EXPAND_START);
+    dispatcher.dispatch(DoubleClickEventEnum.FULLSCREEN_EXPAND_START);
   };
 
   handleFullscreenExpandFinish = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_EXPAND_FINISH);
+    dispatcher.dispatch(DoubleClickEventEnum.FULLSCREEN_EXPAND_FINISH);
   };
 
   /**
@@ -207,7 +223,7 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleFullscreenCollapseStart = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_COLLAPSE_START);
+    dispatcher.dispatch(DoubleClickEventEnum.FULLSCREEN_COLLAPSE_START);
   };
 
   /**
@@ -215,6 +231,6 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
    */
   handleFullscreenCollapseFinish = () => {
     const dispatcher = this.getComponent(EventDispatcherComponent);
-    dispatcher.dispatch(DoubleClickEventEnum.DC_FULLSCREEN_COLLAPSE_FINISH);
+    dispatcher.dispatch(DoubleClickEventEnum.FULLSCREEN_COLLAPSE_FINISH);
   };
 }

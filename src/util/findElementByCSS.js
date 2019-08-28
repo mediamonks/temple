@@ -23,7 +23,6 @@ export default function findElementByCSS(
 
   if (element && element.childNodes && element.childNodes.length > 0) {
     const children = Array.from(element.querySelectorAll('*'));
-
     children.forEach(child => {
       if (
         child.type === 'image/svg+xml' ||
@@ -41,7 +40,7 @@ export default function findElementByCSS(
               if (child.id && obj[style].indexOf(child) === -1) {
                 const val = getStyleRuleValue(`.${style}`, `#${child.id}`, sheet);
                 if (val) {
-                  // console.log('child id', val);
+
                   obj[style].push(child);
                 }
               }

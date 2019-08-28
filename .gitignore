@@ -11,5 +11,6 @@ node_modules/
 /.nyc_output/
 /tmp/
 /dist/
+.package-lock.json
 
 ## only ignore in git

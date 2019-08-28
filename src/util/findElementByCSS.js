@@ -1,6 +1,6 @@
 import getStyleRuleValue from './getStyleRuleValue';
 
-let elementsToSearch = ['div', 'span', 'img', 'canvas', 'svg', 'circle', 'path'];
+const basicElementsToSearch = ['div', 'span', 'img', 'canvas', 'svg', 'circle', 'path'];
 
 /**
  *
@@ -19,10 +19,12 @@ export default function findElementByCSS(
     all: [],
   },
 ) {
-  elementsToSearch = elementsToSearch.concat(customTypes);
+  const elementsToSearch = basicElementsToSearch.concat(customTypes);
+
   if (element && element.childNodes && element.childNodes.length > 0) {
-    for (let i = 0; i < element.childNodes.length; i++) {
-      const child = element.childNodes[i];
+    const children = Array.from(element.querySelectorAll('*'));
+
+    children.forEach(child => {
       if (
         child.type === 'image/svg+xml' ||
         elementsToSearch.indexOf(child.nodeName.toLowerCase()) !== -1
@@ -31,15 +33,16 @@ export default function findElementByCSS(
           if (styles) {
             styles = typeof styles === 'string' ? [styles] : styles;
 
-            for (let j = 0; j < styles.length; j++) {
-              if (!obj[styles[j]]) {
-                obj[styles[j]] = [];
+            styles.forEach(style => {
+              if (!obj[style]) {
+                obj[style] = [];
               }
 
-              if (child.id && obj[styles[j]].indexOf(child) === -1) {
-                const val = getStyleRuleValue(`.${styles[j]}`, `#${child.id}`, sheet);
+              if (child.id && obj[style].indexOf(child) === -1) {
+                const val = getStyleRuleValue(`.${style}`, `#${child.id}`, sheet);
                 if (val) {
-                  obj[styles[j]].push(child);
+                  // console.log('child id', val);
+                  obj[style].push(child);
                 }
               }
 
@@ -48,24 +51,25 @@ export default function findElementByCSS(
                   ? String(child.className.baseVal).split(' ')
                   : String(child.className).split(' ');
 
-              for (let k = 0; k < cssClasses.length; k++) {
-                if (cssClasses[k] && obj[styles[j]].indexOf(child) === -1) {
-                  const val = getStyleRuleValue(`.${styles[j]}`, `.${cssClasses[k]}`, sheet);
-                  if (val && cssClasses[k] == val) {
-                    obj[styles[j]].push(child);
+              cssClasses.forEach(cssClass => {
+                if (cssClass && obj[style].indexOf(child) === -1) {
+                  const val = getStyleRuleValue(`.${style}`, `.${cssClass}`, sheet);
+                  if (val && (`.${cssClass}` === val || cssClass === val)) {
+                    obj[style].push(child);
                   }
                 }
-              }
-            }
+              });
+            });
+
             obj.all.push(child);
-            findElementByCSS(child, styles, null, sheet, obj);
+            findElementByCSS(child, styles, customTypes, sheet, obj);
           } else {
             obj.push(child);
             findElementByCSS(child, null, null, null, obj);
           }
         }
       }
-    }
+    });
   }
 
   return obj;

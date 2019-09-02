@@ -22,8 +22,7 @@ export default function findElementByCSS(
   const elementsToSearch = basicElementsToSearch.concat(customTypes);
 
   if (element && element.childNodes && element.childNodes.length > 0) {
-    const children = Array.from(element.querySelectorAll('> *'));
-
+    const children = Array.from(element.querySelectorAll('*'));
     children.forEach(child => {
       if (
         child.type === 'image/svg+xml' ||
@@ -41,6 +40,7 @@ export default function findElementByCSS(
               if (child.id && obj[style].indexOf(child) === -1) {
                 const val = getStyleRuleValue(`.${style}`, `#${child.id}`, sheet);
                 if (val) {
+
                   obj[style].push(child);
                 }
               }
@@ -53,7 +53,7 @@ export default function findElementByCSS(
               cssClasses.forEach(cssClass => {
                 if (cssClass && obj[style].indexOf(child) === -1) {
                   const val = getStyleRuleValue(`.${style}`, `.${cssClass}`, sheet);
-                  if (val && cssClass === val) {
+                  if (val && (`.${cssClass}` === val || cssClass === val)) {
                     obj[style].push(child);
                   }
                 }

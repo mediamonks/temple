@@ -35,7 +35,7 @@ export default class NetflixBrandLogoAnimation extends AbstractAnimation {
   getTransitionOut(complete = () => {}) {
     const tl = new TimelineLite();
     tl.call(() => {
-      this.element.progress(1);
+      // this.element.progress(1);
       this.element.timeline.reversed(true);
     });
     // tl.call(() => this.element.play())

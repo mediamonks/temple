@@ -36,6 +36,11 @@ function dataBind(model, element) {
         break;
       }
 
+      case 'href': {
+        el.href = getValue(model, data.path);
+        break;
+      }
+
       case 'src': {
         el.src = getValue(model, data.path);
         break;

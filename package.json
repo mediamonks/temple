@@ -1,6 +1,6 @@
 {
   "name": "@mediamonks/temple",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "This is the Richmedia Temple, used for creating richmedia units for various vendors.",
   "scripts": {
     "prepublishOnly": "npm-run-all -s validate build",

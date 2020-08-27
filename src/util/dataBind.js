@@ -35,6 +35,10 @@ function dataBind(model, element) {
         el.innerText = getValue(model, data.path);
         break;
       }
+      case 'html': {
+        el.innerHTML = getValue(model, data.path);
+        break;
+      }
 
       case 'href': {
         el.href = getValue(model, data.path);

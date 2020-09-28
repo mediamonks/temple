@@ -8,10 +8,7 @@
 export default function getStyleRuleValue(style, selector, sheet) {
   let result = null;
   const list = Array.from(document.styleSheets).filter(cssStyleSheet => {
-    return (
-      cssStyleSheet.href &&
-      cssStyleSheet.href.indexOf(sheet) !== -1
-    );
+    return cssStyleSheet.href && cssStyleSheet.href.indexOf(sheet) !== -1;
   });
 
   // list from correct stylesheets
@@ -28,17 +25,17 @@ export default function getStyleRuleValue(style, selector, sheet) {
               rule.selectorText.indexOf(selector) !== -1 &&
               rule.selectorText.indexOf(style) !== -1
             ) {
-              const all = rule.selectorText.substring(0, rule.selectorText.indexOf(style)).split('.');
+              const all = rule.selectorText
+                .substring(0, rule.selectorText.indexOf(style))
+                .split('.');
               result = all[all.length - 1];
             }
           }
         });
       }
-
-    } catch(e) {
+    } catch (e) {
       result = selector;
     }
-
   });
 
   return result;

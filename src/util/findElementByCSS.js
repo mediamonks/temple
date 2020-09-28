@@ -40,7 +40,6 @@ export default function findElementByCSS(
               if (child.id && obj[style].indexOf(child) === -1) {
                 const val = getStyleRuleValue(`.${style}`, `#${child.id}`, sheet);
                 if (val) {
-
                   obj[style].push(child);
                 }
               }

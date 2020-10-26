@@ -35,6 +35,7 @@ function dataBind(model, element) {
         el.innerText = getValue(model, data.path);
         break;
       }
+
       case 'html': {
         el.innerHTML = getValue(model, data.path);
         break;
@@ -47,6 +48,11 @@ function dataBind(model, element) {
 
       case 'src': {
         el.src = getValue(model, data.path);
+        break;
+      }
+
+      default: {
+        el.setAttribute(data.type, getValue(model, data.path));
         break;
       }
     }

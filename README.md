@@ -9,7 +9,7 @@
 This is the Richmedia Temple, used for creating richmedia units for various vendors. 
 
 ## Getting Started
-See https://assets-at-scale.gitbook.io/temple-suite/ for documentation to getting started.
+See https://mediamonks.github.com/generator-richmedia-temple for documentation to getting started.
 
 Or
 

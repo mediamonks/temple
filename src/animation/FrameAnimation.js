@@ -1,6 +1,4 @@
 // eslint-disable-next-line import/no-unresolved
-import { gsap } from 'gsap';
-
 const methodNameMatch = /(frame)(\d+)(In|Out|)$/;
 
 export default class FrameAnimation {

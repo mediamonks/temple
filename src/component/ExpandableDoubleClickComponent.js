@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Component from './Component';
 import getEnabler from '../util/getEnabler';
 import EventDispatcherComponent from './EventDispatcherComponent';
@@ -71,20 +72,20 @@ export default class ExpandableDoubleClickComponent extends Component {
 
   handleExpandFinish = e => {
     const eventDispatcher = this.getComponent(EventDispatcherComponent);
-    const element = this.getComponent(ElementComponent).getElement();
+    const element = this.getComponent(ElementComponent).get();
 
     this.isExpanded = true;
     this.isExpanding = false;
-    this.template.banner.style.width = this.size.width + 'px';
-    this.template.banner.style.height = this.size.height + 'px';
-    this.template.banner.classList.add('expanded');
+    element.style.width = `${this.size.width}px`;
+    element.style.height = `${this.size.height}px`;
+    element.classList.add('expanded');
 
     if (this.autoExpand) {
       this.autoExpand = false;
       return;
     }
 
-    eventDispatcher.dispatchEvent(temple.events.EXPAND, e);
+    eventDispatcher.dispatchEvent(EventType.EXPAND, e);
 
     Enabler.counter('Expand', true);
   };
@@ -96,10 +97,10 @@ export default class ExpandableDoubleClickComponent extends Component {
     const elementComponent = this.getComponent(ElementComponent);
     const eventDispatcher = this.getComponent(EventDispatcherComponent);
 
-    const element = elementComponent.getElement();
+    const element = elementComponent.get();
 
-    element.style.width = this.config.size.width + 'px';
-    element.style.height = this.config.size.height + 'px';
+    element.style.width = `${this.size.width}px`;
+    element.style.height = `${this.size.height}px`;
     element.classList.remove('expanded');
 
     eventDispatcher.dispatchEvent(EventType.COLLAPSE, e);

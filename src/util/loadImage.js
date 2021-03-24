@@ -6,7 +6,7 @@
 export default function loadImage(src) {
   return new Promise((resolve, reject) => {
     const img = document.createElement('img');
-    img.onload = function(e) {
+    img.onload = function() {
       resolve(this);
     };
     img.onerror = reject;

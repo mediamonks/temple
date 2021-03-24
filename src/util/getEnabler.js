@@ -1,12 +1,12 @@
+/* eslint-disable no-undef */
+
 let prom = null;
-const limit = 10000;
-let count = 0;
 
 export default function getEnabler() {
   if (!prom) {
-    prom = new Promise((resolve, reject) => {
+    prom = new Promise(resolve => {
       const checkLoop = function() {
-        if (!!Enabler) {
+        if (Enabler) {
           resolve(Enabler);
         } else {
           setTimeout(checkLoop, 500);

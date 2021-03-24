@@ -3,7 +3,7 @@ import loadImage from './loadImage';
 import loadText from './loadText';
 
 const regJson = /\.json$/;
-const regText = /\.(html|text|md|MD)$/;
+// const regText = /\.(html|text|md|MD)$/;
 const regJs = /\.js$/;
 const regBitmap = /\.(png|gif|jpg|jpeg|svg)$/;
 

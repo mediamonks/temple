@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import loadScript from '../../util/loadScript';
 import PlatformComponent from './PlatformComponent';
 import EventDispatcherComponent from '../EventDispatcherComponent';
@@ -11,15 +13,16 @@ export default class DoubleClickPlatformComponent extends PlatformComponent {
     return super
       .init()
       .then(() => this.loadEnabler())
-      .then(() => {
-        return new Promise(resolve => {
-          if (!Enabler.isInitialized()) {
-            Enabler.addEventListener(studio.events.StudioEvent.INIT, resolve);
-          } else {
-            resolve();
-          }
-        });
-      })
+      .then(
+        () =>
+          new Promise(resolve => {
+            if (!Enabler.isInitialized()) {
+              Enabler.addEventListener(studio.events.StudioEvent.INIT, resolve);
+            } else {
+              resolve();
+            }
+          }),
+      )
       .then(() => {
         this.queryFullscreenDimensions();
         this.queryFullscreenSupport();

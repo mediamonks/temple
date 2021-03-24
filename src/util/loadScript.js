@@ -19,7 +19,7 @@ export default function loadScript(url, opts = {}) {
 
     script.onerror = function() {
       this.onerror = this.onload = null;
-      reject(new Error('Failed to load ' + this.src), script);
+      reject(new Error(`Failed to load ${this.src}`), script);
     };
 
     script.src = url;

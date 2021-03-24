@@ -4,6 +4,11 @@
 export default class EventDispatcher {
   _events = {};
 
+  /**
+   *
+   * @param {string} name
+   * @param {Array<any>>} args
+   */
   dispatchEvent(name, ...args) {
     if (this._events[name]) {
       const events = this._events[name];

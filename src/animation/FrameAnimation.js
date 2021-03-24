@@ -1,11 +1,14 @@
+// eslint-disable-next-line import/no-unresolved
+import { gsap } from 'gsap';
+
 const methodNameMatch = /(frame)(\d+)(In|Out|)$/;
 
 export default class FrameAnimation {
   /**
-   * @return Array<{in: Timeline | null, base: Timeline | null, out: Timeline | null}>
+   * @return Array<{in: gsap.core.Timeline | null, base: gsap.core.Timeline | null, out: gsap.core.Timeline | null}>
    * @private
    */
-  __gatherAnimations() {
+  __gatherAnimation() {
     const scope = this;
     const names = Object.getOwnPropertyNames(Object.getPrototypeOf(this));
 
@@ -13,7 +16,7 @@ export default class FrameAnimation {
     names.forEach(name => {
       const result = methodNameMatch.exec(name);
       if (result !== null) {
-        let [_, _, frameNumber, type] = result;
+        let [_, _1, frameNumber, type] = result;
         frameNumber = parseInt(frameNumber, 10);
         type = `${type}`.toLowerCase();
 
@@ -36,8 +39,12 @@ export default class FrameAnimation {
     return data;
   }
 
-  play() {
-    const animations = this.__gatherAnimations();
+  /**
+   * @return gsap.core.Timeline
+   * @private
+   */
+  __getTimeline() {
+    const animations = this.__gatherAnimation();
     const timeline = gsap.timeline();
 
     for (let i = 0; i < animations.length; i++) {
@@ -53,6 +60,13 @@ export default class FrameAnimation {
         }
       }
     }
+
+    return timeline;
+  }
+
+  play() {
+    const timeline = this.__getTimeline();
+    timeline.play();
 
     return timeline;
   }

@@ -1,64 +1,38 @@
-import loadScript from '../util/loadScript';
-import getEnabler from '../util/getEnabler';
-import EventDispatcher from '../event/EventDispatcher';
+/* eslint-disable no-undef */
 
-export default class DoubleClickPlatformDispatcher extends EventDispatcher {
-  static EVENT_INIT = 'DoubleClickPlatformComponent.INIT';
-  static EVENT_EXIT = 'DoubleClickPlatformComponent.EXIT';
-  static EVENT_VISIBLE = 'DoubleClickPlatformComponent.VISIBLE';
-  static EVENT_EXPAND_START = 'DoubleClickPlatformComponent.EXPAND_START';
-  static EVENT_EXPAND_FINISH = 'DoubleClickPlatformComponent.EXPAND_FINISH';
-  static EVENT_COLLAPSE = 'DoubleClickPlatformComponent.COLLAPSE';
-  static EVENT_COLLAPSE_START = 'DoubleClickPlatformComponent.COLLAPSE_START';
-  static EVENT_COLLAPSE_FINISH = 'DoubleClickPlatformComponent.COLLAPSE_FINISH';
-  static EVENT_FULLSCREEN_EXPAND_START = 'DoubleClickPlatformComponent.FULLSCREEN_EXPAND_START';
-  static EVENT_FULLSCREEN_EXPAND_FINISH = 'DoubleClickPlatformComponent.FULLSCREEN_EXPAND_FINISH';
-  static EVENT_FULLSCREEN_COLLAPSE_START = 'DoubleClickPlatformComponent.FULLSCREEN_COLLAPSE_START';
-  static EVENT_FULLSCREEN_COLLAPSE_FINISH = 'DoubleClickPlatformComponent.FULLSCREEN_COLLAPSE_FINISH';
-  static EVENT_HIDDEN = 'DoubleClickPlatformComponent.HIDDEN';
-  static EVENT_INTERACTION = 'DoubleClickPlatformComponent.INTERACTION';
-  static EVENT_ORIENTATION = 'DoubleClickPlatformComponent.ORIENTATION';
-  static EVENT_PAGE_LOADED = 'DoubleClickPlatformComponent.PAGE_LOADED';
+import loadScript from '../../util/loadScript';
+import PlatformComponent from './PlatformComponent';
+import EventDispatcherComponent from '../EventDispatcherComponent';
+import DoubleClickEventEnum from '../../event/DoubleClickEventEnum';
+import getEnabler from '../../util/getEnabler';
 
-  _init = null;
+export default class DoubleClickPlatformComponent extends PlatformComponent {
+  static requires = [EventDispatcherComponent];
 
-  constructor(autoInit = true) {
-    super();
-
-    if (autoInit) {
-      this.init();
-    }
-  }
-
-  /**
-   *
-   * @return {null}
-   */
   init() {
-    if(this._init){
-      this._init = getEnabler()
-        .then(Enabler => {
-          return new Promise(resolve => {
+    return super
+      .init()
+      .then(() => this.loadEnabler())
+      .then(
+        () =>
+          new Promise(resolve => {
             if (!Enabler.isInitialized()) {
               Enabler.addEventListener(studio.events.StudioEvent.INIT, resolve);
             } else {
               resolve();
             }
-          });
-        })
-        .then(() => {
-          this.queryFullscreenDimensions();
-          this.queryFullscreenSupport();
+          }),
+      )
+      .then(() => {
+        this.queryFullscreenDimensions();
+        this.queryFullscreenSupport();
 
-          this.setupEvents();
-        });
-    }
-
-    return this._init;
+        this.setupEvents();
+      });
   }
 
   async loadEnabler() {
-    if (!window.Enabler) {
+    if (!Enabler) {
       await loadScript('https://s0.2mdn.net/ads/studio/Enabler.js');
     }
 
@@ -66,7 +40,7 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
   }
 
   setupEvents() {
-    const e = window.Enabler;
+    const e = Enabler;
     const se = studio.events.StudioEvent;
 
     e.addEventListener(se.EXIT, this.handleExit);
@@ -124,10 +98,10 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
     if (!this._queryFullscreenDimensionsPromise) {
       this._queryFullscreenDimensionsPromise = new Promise(resolve => {
         const fn = data => {
-          window.Enabler.removeEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
+          Enabler.removeEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
           resolve(data);
         };
-        window.Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
+        Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, fn);
       });
     }
 
@@ -157,15 +131,18 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
    * Dispatched when an exit is invoked.
    */
   handleExit = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_EXIT);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.EXIT);
   };
 
   handleInit = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_INIT);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.INIT);
   };
 
   handleVisible = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_VISIBLE);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.VISIBLE);
   };
 
   /**
@@ -173,22 +150,26 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
    * studio.Enabler#requestExpand() or when the rendering environment has initiated expanding the creative.
    */
   handleExpandStart = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_EXPAND_START);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.EXPAND_START);
   };
 
   /**
    * Dispatched when the creative has finished expanding.
    */
   handleExpandFinish = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_EXPAND_FINISH);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.EXPAND_FINISH);
   };
 
   handleCollapse = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_COLLAPSE);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.COLLAPSE);
   };
 
   handleCollapseStart = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_COLLAPSE_START);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.COLLAPSE_START);
   };
 
   /**
@@ -196,25 +177,29 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
    * ad is rendered offscreen and displayed to the user at a later time, then possibly hidden.
    */
   handleHidden = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_HIDDEN);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.HIDDEN);
   };
 
   /**
    * Dispatched when an interaction occurs.
    */
   handleInteraction = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_INTERACTION);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.INTERACTION);
   };
 
   /**
    * Dispatched when orientation and/or orientation degrees change.
    */
   handleOrientation = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_ORIENTATION);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.ORIENTATION);
   };
 
   handlePageLoaded = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_PAGE_LOADED);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.PAGE_LOADED);
   };
 
   /**
@@ -222,28 +207,33 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
    * calls studio.Enabler#requestCollapse() or when the rendering environment has started to collapsed the creative
    */
   handleCollapseFinish = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_COLLAPSE_FINISH);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.COLLAPSE_FINISH);
   };
 
   handleFullscreenExpandStart = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_FULLSCREEN_EXPAND_START);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.FULLSCREEN_EXPAND_START);
   };
 
   handleFullscreenExpandFinish = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_FULLSCREEN_EXPAND_FINISH);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.FULLSCREEN_EXPAND_FINISH);
   };
 
   /**
    * Dispatched when the creative should begin collapsing from fullscreen state to collapsed state.
    */
   handleFullscreenCollapseStart = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_FULLSCREEN_COLLAPSE_START);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.FULLSCREEN_COLLAPSE_START);
   };
 
   /**
    * Dispatched when the creative has finished collapsing from fullscreen state to collapsed state.
    */
   handleFullscreenCollapseFinish = () => {
-    this.dispatch(DoubleClickPlatformDispatcher.EVENT_FULLSCREEN_COLLAPSE_FINISH);
+    const dispatcher = this.getComponent(EventDispatcherComponent);
+    dispatcher.dispatch(DoubleClickEventEnum.FULLSCREEN_COLLAPSE_FINISH);
   };
 }

@@ -16,7 +16,7 @@ export default class FrameAnimation {
     names.forEach(name => {
       const result = methodNameMatch.exec(name);
       if (result !== null) {
-        let [_, _1, frameNumber, type] = result;
+        let [frameNumber, type] = result.splice(2);
         frameNumber = parseInt(frameNumber, 10);
         type = `${type}`.toLowerCase();
 

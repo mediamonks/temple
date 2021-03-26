@@ -2,6 +2,8 @@
 const methodNameMatch = /(frame)(\d+)(In|Out|)$/;
 
 export default class FrameAnimation {
+  static TYPE_CROSS = 'cross';
+
   /**
    * @return Array<{in: gsap.core.Timeline | null, base: gsap.core.Timeline | null, out: gsap.core.Timeline | null}>
    * @private
@@ -22,14 +24,18 @@ export default class FrameAnimation {
           type = 'base';
         }
 
-        const timeline = scope[name]();
+        const method = scope[name];
 
-        if (timeline) {
+        if (method) {
           if (!data[frameNumber]) {
-            data[frameNumber] = { in: null, base: null, out: null };
+            data[frameNumber] = {
+              in: null,
+              base: null,
+              out: null,
+            };
           }
 
-          data[frameNumber][type] = timeline;
+          data[frameNumber][type] = method;
         }
       }
     });
@@ -41,20 +47,22 @@ export default class FrameAnimation {
    * @return gsap.core.Timeline
    * @private
    */
-  __getTimeline() {
-    const animations = this.__gatherAnimation();
-    const timeline = gsap.timeline();
+  __getTimeline(timeline = gsap.timeline()) {
+    const animationMethods = this.__gatherAnimation();
 
-    for (let i = 0; i < animations.length; i++) {
-      if (animations[i]) {
-        if (animations[i].in) {
-          timeline.add(animations[i].in);
+    for (let i = 0; i < animationMethods.length; i++) {
+      if (animationMethods[i]) {
+        if (animationMethods[i].in) {
+          const subTimeline = animationMethods[i].in(timeline);
+          if (subTimeline) timeline.add(subTimeline);
         }
-        if (animations[i].base) {
-          timeline.add(animations[i].base);
+        if (animationMethods[i].base) {
+          const subTimeline = animationMethods[i].base(timeline);
+          if (subTimeline) timeline.add(subTimeline);
         }
-        if (animations[i].out) {
-          timeline.add(animations[i].out);
+        if (animationMethods[i].out) {
+          const subTimeline = animationMethods[i].out(timeline);
+          if (subTimeline) timeline.add(subTimeline);
         }
       }
     }

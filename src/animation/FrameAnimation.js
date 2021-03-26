@@ -70,8 +70,8 @@ export default class FrameAnimation {
     return timeline;
   }
 
-  play() {
-    const timeline = this.__getTimeline();
+  play(timeline = gsap.timeline()) {
+    timeline = this.__getTimeline(timeline);
     timeline.play();
 
     return timeline;

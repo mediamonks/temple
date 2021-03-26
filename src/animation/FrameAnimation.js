@@ -1,6 +1,9 @@
 // eslint-disable-next-line import/no-unresolved
 const methodNameMatch = /(frame)(\d+)(In|Out|)$/;
 
+/**
+ *
+ */
 export default class FrameAnimation {
   static TYPE_CROSS = 'cross';
 
@@ -70,6 +73,11 @@ export default class FrameAnimation {
     return timeline;
   }
 
+  /**
+   *
+   * @param {gsap.core.Timeline} timeline
+   * @return {gsap.core.Timeline}
+   */
   play(timeline = gsap.timeline()) {
     timeline = this.__getTimeline(timeline);
     timeline.play();

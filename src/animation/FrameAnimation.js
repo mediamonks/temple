@@ -5,8 +5,6 @@ const methodNameMatch = /(frame)(\d+)(In|Out|)$/;
  *
  */
 export default class FrameAnimation {
-  static TYPE_CROSS = 'cross';
-
   /**
    * @return Array<{in: gsap.core.Timeline | null, base: gsap.core.Timeline | null, out: gsap.core.Timeline | null}>
    * @private

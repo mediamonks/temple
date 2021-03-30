@@ -77,9 +77,9 @@ export default class FrameAnimation {
    * @return {gsap.core.Timeline}
    */
   play(timeline = gsap.timeline()) {
-    timeline = this.__getTimeline(timeline);
-    timeline.play();
-
-    return timeline;
+    if (!this.timeline) {
+      this.timeline = this.__getTimeline(timeline);
+    }
+    this.timeline.play();
   }
 }

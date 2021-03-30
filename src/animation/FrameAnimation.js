@@ -48,7 +48,7 @@ export default class FrameAnimation {
    * @return gsap.core.Timeline
    * @private
    */
-  __getTimeline(timeline = gsap.timeline()) {
+  __createTimeline(timeline = gsap.timeline()) {
     const animationMethods = this.__gatherAnimation();
 
     for (let i = 0; i < animationMethods.length; i++) {
@@ -71,15 +71,21 @@ export default class FrameAnimation {
     return timeline;
   }
 
+  getTimeline(timeline = gsap.timeline()) {
+    if (!this.__timeline) {
+      this.__timeline = this.__createTimeline(timeline);
+    }
+
+    return this.__timeline;
+  }
+
   /**
    *
    * @param {gsap.core.Timeline} timeline
    * @return {gsap.core.Timeline}
    */
-  play(timeline = gsap.timeline()) {
-    if (!this.timeline) {
-      this.timeline = this.__getTimeline(timeline);
-    }
-    this.timeline.play();
+  play(tl = gsap.timeline()) {
+    const timeline = this.getTimeline(tl);
+    timeline.play();
   }
 }

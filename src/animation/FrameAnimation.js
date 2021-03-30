@@ -45,8 +45,6 @@ export default class FrameAnimation {
       }
     });
 
-    console.log(data);
-
     return data;
   }
 

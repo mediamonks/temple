@@ -11,7 +11,11 @@ export default class FrameAnimation {
    */
   __gatherAnimation() {
     const scope = this;
-    const names = Object.getOwnPropertyNames(Object.getPrototypeOf(this));
+    let names = [];
+    let obj = this;
+    do {
+      names = names.concat(Object.getOwnPropertyNames(obj));
+    } while ((obj = Object.getPrototypeOf(obj)));
 
     const data = [];
     names.forEach(name => {
@@ -40,6 +44,8 @@ export default class FrameAnimation {
         }
       }
     });
+
+    console.log(data);
 
     return data;
   }

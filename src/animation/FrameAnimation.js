@@ -54,15 +54,15 @@ export default class FrameAnimation {
     for (let i = 0; i < animationMethods.length; i++) {
       if (animationMethods[i]) {
         if (animationMethods[i].in) {
-          const subTimeline = animationMethods[i].in(timeline);
+          const subTimeline = animationMethods[i].in.call(this, timeline);
           if (subTimeline) timeline.add(subTimeline);
         }
         if (animationMethods[i].base) {
-          const subTimeline = animationMethods[i].base(timeline);
+          const subTimeline = animationMethods[i].base.call(this, timeline);
           if (subTimeline) timeline.add(subTimeline);
         }
         if (animationMethods[i].out) {
-          const subTimeline = animationMethods[i].out(timeline);
+          const subTimeline = animationMethods[i].out.call(this, timeline);
           if (subTimeline) timeline.add(subTimeline);
         }
       }

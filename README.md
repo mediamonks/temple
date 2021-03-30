@@ -6,14 +6,14 @@
 <!-- [![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate) -->
 <!-- [![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master) -->
 
-This is the Richmedia Temple, used for creating richmedia units for various vendors. 
+This is the Richmedia Temple, used for creating richmedia units for various vendors.
 
 ## Getting Started
-See https://assets-at-scale.gitbook.io/temple-suite/ for documentation to getting started.
+See documentation https://mediamonks.github.io/display-advertising-docs/index.html for documentation to getting started.
 
 Or
 
-View the [generated documentation](http://mediamonks.github.io/temple/). 
+View the [generated documentation](http://mediamonks.github.io/temple/).
 
 ## Installation
 

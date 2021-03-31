@@ -86,6 +86,6 @@
     "esdoc-publish-html-plugin": "^1.1.2"
   },
   "peerDependencies": {
-    "gsap": "^3.6.0"
+    "gsap": "^3.1.0"
   }
 }

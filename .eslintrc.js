@@ -31,6 +31,7 @@ module.exports = {
     'class-methods-use-this': 0,
     'prefer-arrow-callback': 0,
     'no-plusplus': 0,
+    'no-multi-assign': 0,
     // prettier compatibility
     'no-param-reassign': 0,
     'max-len': 0,

@@ -1,3 +1,6 @@
+/* eslint-disable import/no-unresolved */
+import { gsap } from 'gsap';
+
 /**
  *
  * @param {Array<HTMLElement>} copyElements
@@ -6,7 +9,7 @@ export default function fitText(...copyElements) {
   copyElements = copyElements.flat();
 
   copyElements.forEach(copyElement => {
-    TweenMax.set(copyElement, { clearProps: 'fontSize, lineHeight' });
+    gsap.set(copyElement, { clearProps: 'fontSize, lineHeight' });
     const { parentElement } = copyElement;
     let fontSize = Number(
       window

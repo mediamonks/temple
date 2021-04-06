@@ -1,7 +1,7 @@
 {
   "name": "@mediamonks/temple",
-  "version": "4.1.0",
-  "description": "This is the Richmedia Temple, used for creating richmedia units for various vendors.",
+  "version": "5.0.13",
+  "description": "This is the Display Advertising Temple, used for creating Display Advertising Units for various vendors.",
   "scripts": {
     "prepublishOnly": "npm-run-all -s validate build",
     "validate": "npm-run-all -p lint test",
@@ -84,5 +84,8 @@
     "sinon": "^4.1.3",
     "sinon-chai": "^2.14.0",
     "esdoc-publish-html-plugin": "^1.1.2"
+  },
+  "peerDependencies": {
+    "gsap": "^3.1.0"
   }
 }

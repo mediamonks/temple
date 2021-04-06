@@ -29,30 +29,38 @@ function dataBind(model, element) {
 
   elements.forEach(el => {
     const data = getObject(el.getAttribute('data-bind'));
+    const val = getValue(model, data.path);
 
     switch (data.type) {
       case 'text': {
-        el.innerText = getValue(model, data.path);
+        el.innerText = val;
         break;
       }
 
       case 'html': {
-        el.innerHTML = getValue(model, data.path);
+        el.innerHTML = val;
         break;
       }
 
       case 'href': {
-        el.href = getValue(model, data.path);
+        el.href = val;
         break;
       }
 
       case 'src': {
-        el.src = getValue(model, data.path);
+        el.src = val;
         break;
       }
 
       default: {
-        el.setAttribute(data.type, getValue(model, data.path));
+        // match anything with style.*
+        const match = /style\.([\w-]+)/.exec(data.type);
+        if (match && el.style[match[1]]) {
+          el.style[match[1]] = val;
+        } else {
+          el.setAttribute(data.type, getValue(model, data.path));
+        }
+
         break;
       }
     }

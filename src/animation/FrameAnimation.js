@@ -75,6 +75,11 @@ export default class FrameAnimation {
     return timeline;
   }
 
+  /**
+   * Returns the concatinated timeline timeline
+   * @param timeline
+   * @return {gsap.core.Timeline}
+   */
   getTimeline(timeline = gsap.timeline()) {
     if (!this.__timeline) {
       this.__timeline = this.__createTimeline(timeline);

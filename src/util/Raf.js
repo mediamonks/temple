@@ -1,7 +1,7 @@
 /**
  * Request animationframe
  */
-class __Raf {
+class raf {
   rafNum = -1;
   currentTime = 0;
 

@@ -14,7 +14,7 @@ export default class DoubleClickBanner {
    */
   constructor(container) {
     this._dispose.push(
-      this._platform.addEventListener(DoubleClickPlatform.EVENT_INIT, () => this.init()),
+      this._platform.addEventListener(DoubleClickPlatform.INIT, () => this.init()),
     );
     this.container = container;
   }

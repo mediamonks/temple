@@ -1,6 +1,8 @@
 /**
  *
  */
+import Disposable from './Disposable';
+
 export default class EventDispatcher {
   _events = {};
 
@@ -31,6 +33,8 @@ export default class EventDispatcher {
     }
 
     this._events[name].push(func);
+
+    return new Disposable(name, func, this);
   }
 
   /**

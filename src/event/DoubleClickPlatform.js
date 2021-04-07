@@ -2,7 +2,7 @@ import loadScript from '../util/loadScript';
 import getEnabler from '../util/getEnabler';
 import EventDispatcher from './EventDispatcher';
 
-export default class DoubleClickPlatformDispatcher extends EventDispatcher {
+export default class DoubleClickPlatform extends EventDispatcher {
   static EVENT_INIT = 'DoubleClickPlatformComponent.INIT';
   static EVENT_EXIT = 'DoubleClickPlatformComponent.EXIT';
   static EVENT_VISIBLE = 'DoubleClickPlatformComponent.VISIBLE';
@@ -160,15 +160,15 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
    * Dispatched when an exit is invoked.
    */
   handleExit = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_EXIT);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_EXIT);
   };
 
   handleInit = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_INIT);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_INIT);
   };
 
   handleVisible = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_VISIBLE);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_VISIBLE);
   };
 
   /**
@@ -176,22 +176,22 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
    * studio.Enabler#requestExpand() or when the rendering environment has initiated expanding the creative.
    */
   handleExpandStart = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_EXPAND_START);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_EXPAND_START);
   };
 
   /**
    * Dispatched when the creative has finished expanding.
    */
   handleExpandFinish = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_EXPAND_FINISH);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_EXPAND_FINISH);
   };
 
   handleCollapse = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_COLLAPSE);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_COLLAPSE);
   };
 
   handleCollapseStart = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_COLLAPSE_START);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_COLLAPSE_START);
   };
 
   /**
@@ -199,25 +199,25 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
    * ad is rendered offscreen and displayed to the user at a later time, then possibly hidden.
    */
   handleHidden = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_HIDDEN);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_HIDDEN);
   };
 
   /**
    * Dispatched when an interaction occurs.
    */
   handleInteraction = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_INTERACTION);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_INTERACTION);
   };
 
   /**
    * Dispatched when orientation and/or orientation degrees change.
    */
   handleOrientation = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_ORIENTATION);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_ORIENTATION);
   };
 
   handlePageLoaded = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_PAGE_LOADED);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_PAGE_LOADED);
   };
 
   /**
@@ -225,28 +225,28 @@ export default class DoubleClickPlatformDispatcher extends EventDispatcher {
    * calls studio.Enabler#requestCollapse() or when the rendering environment has started to collapsed the creative
    */
   handleCollapseFinish = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_COLLAPSE_FINISH);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_COLLAPSE_FINISH);
   };
 
   handleFullscreenExpandStart = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_FULLSCREEN_EXPAND_START);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_FULLSCREEN_EXPAND_START);
   };
 
   handleFullscreenExpandFinish = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_FULLSCREEN_EXPAND_FINISH);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_FULLSCREEN_EXPAND_FINISH);
   };
 
   /**
    * Dispatched when the creative should begin collapsing from fullscreen state to collapsed state.
    */
   handleFullscreenCollapseStart = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_FULLSCREEN_COLLAPSE_START);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_FULLSCREEN_COLLAPSE_START);
   };
 
   /**
    * Dispatched when the creative has finished collapsing from fullscreen state to collapsed state.
    */
   handleFullscreenCollapseFinish = () => {
-    this.dispatchEvent(DoubleClickPlatformDispatcher.EVENT_FULLSCREEN_COLLAPSE_FINISH);
+    this.dispatchEvent(DoubleClickPlatform.EVENT_FULLSCREEN_COLLAPSE_FINISH);
   };
 }

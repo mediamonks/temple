@@ -59,12 +59,14 @@ export default class DoubleClickPlatform extends EventDispatcher {
     return this._init;
   }
 
-  async loadEnabler() {
+  loadEnabler() {
+    let prom = Promise.resolve();
+
     if (!window.Enabler) {
-      await loadScript('https://s0.2mdn.net/ads/studio/Enabler.js');
+      prom = prom.then(() => loadScript('https://s0.2mdn.net/ads/studio/Enabler.js'));
     }
 
-    return getEnabler();
+    return prom.then(() => getEnabler());
   }
 
   setupEvents() {

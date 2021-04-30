@@ -1,3 +1,5 @@
+import makeObservable from './makeObservable';
+
 function getObject(str) {
   let [type, path] = str.split(':');
 
@@ -24,47 +26,68 @@ function getValue(model, path) {
   return model;
 }
 
-function dataBind(model, element) {
+/**
+ *
+ * @param {object} model
+ * @param {HTMLElement} element
+ * @param {boolean} isObservable
+ */
+function dataBind(model, element, isObservable = false) {
   const elements = element.querySelectorAll('[data-bind]');
 
-  elements.forEach(el => {
-    const data = getObject(el.getAttribute('data-bind'));
-    const val = getValue(model, data.path);
+  if (isObservable) {
+    let { observable: model, dispatcher } = makeObservable(model);
 
-    switch (data.type) {
-      case 'text': {
-        el.innerText = val;
-        break;
-      }
+    elements.forEach(el => {
+      const data = getObject(el.getAttribute('data-bind'));
 
-      case 'html': {
-        el.innerHTML = val;
-        break;
-      }
+      dispatcher.addEventListener(data.path.join('.'), () =>
+        updateElement(data.type, getValue(model, data.path), el),
+      );
+    });
 
-      case 'href': {
-        el.href = val;
-        break;
-      }
+    return { model, dispatcher };
+  } else {
+    elements.forEach(el => {
+      const data = getObject(el.getAttribute('data-bind'));
 
-      case 'src': {
-        el.src = val;
-        break;
-      }
+      updateElement(data.type, getValue(model, data.path), el);
+    });
+  }
 
-      default: {
-        // match anything with style.*
-        const match = /style\.([\w-]+)/.exec(data.type);
-        if (match && el.style[match[1]]) {
-          el.style[match[1]] = val;
-        } else {
-          el.setAttribute(data.type, getValue(model, data.path));
-        }
+  return { model };
+}
 
-        break;
-      }
+function updateElement(type, val, element) {
+  switch (type) {
+    case 'text': {
+      element.innerText = val;
+      break;
     }
-  });
+
+    case 'html': {
+      element.innerHTML = val;
+      break;
+    }
+
+    case 'href':
+    case 'src': {
+      element[data.type] = val;
+      break;
+    }
+
+    default: {
+      // match anything with style.*
+      const match = /style\.([\w-]+)/.exec(type);
+      if (match && element.style[match[1]]) {
+        element.style[match[1]] = val;
+      } else {
+        element.setAttribute(type, val);
+      }
+
+      break;
+    }
+  }
 }
 
 export default dataBind;

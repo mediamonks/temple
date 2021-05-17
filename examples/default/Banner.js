@@ -1,5 +1,3 @@
-import DoubleClickBanner from '../../src/DoubleClickBanner';
-
 class Banner {
 
   /**
@@ -16,7 +14,7 @@ class Banner {
   async init(){
 
     // this function already inlines svg img tags
-    await super.init();
+
   }
 
   start(){

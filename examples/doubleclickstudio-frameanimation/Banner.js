@@ -1,7 +1,9 @@
-import DoubleClickBanner from '../../src/DoubleClickBanner';
 import config from "richmediarc";
+import untilEnablerIsInitialized from '@mediamonks/temple/util/doubleclick/untilEnablerIsInitialized';
+import getEventDispatcher from '@mediamonks/temple/util/doubleclick/getEventDispatcher';
+import Events from '@mediamonks/temple/event/Events';
 
-class Banner extends DoubleClickBanner {
+class Banner{
 
   config = config;
   /**
@@ -11,19 +13,25 @@ class Banner extends DoubleClickBanner {
    */
   constructor (container, animation)
   {
-    super(container);
-
+    this.container = container;
     this.animation = animation;
   }
 
   // function is called by INIT from studio.events.StudioEvent.INIT
   async init(){
 
-    // this function already inlines svg img tags
-    await super.init();
+    // waits until Enabler is initialized.
+    await untilEnablerIsInitialized();
+
+    const eventDispatcher = await getEventDispatcher();
+    eventDispatcher.addEventListener(Events.VISIBLE, () => {
+      // do something when banner is visible.
+    })
   }
 
-  start(){
+  async start(){
+    await this.init();
+
     this.animation.play();
   }
 }

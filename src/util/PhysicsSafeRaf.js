@@ -1,7 +1,14 @@
 /**
- * Request animationframe
+ * @description
+ *
+ *   const raf = new Raf((time, diff) => {
+ *     // do animation diff is the time difference between this frame and the previous frame
+ *   }).start()
+ *
+ *   // stop animation.
+ *   raf.stop();
  */
-class raf {
+export default class PhysicsSafeRaf {
   rafNum = -1;
   currentTime = 0;
 
@@ -40,9 +47,13 @@ class raf {
     if (this.rafNum === -1) {
       this.tick();
     }
+
+    return this;
   };
   stop = () => {
     cancelAnimationFrame(this.rafNum);
     this.rafNum = -1;
+
+    return this;
   };
 }

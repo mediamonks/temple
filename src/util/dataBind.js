@@ -79,7 +79,7 @@ function updateElement(type, val, element) {
     default: {
       // match anything with style.*
       const match = /style\.([\w-]+)/.exec(type);
-      if (match && element.style[match[1]]) {
+      if (match) {
         element.style[match[1]] = val;
       } else {
         element.setAttribute(type, val);

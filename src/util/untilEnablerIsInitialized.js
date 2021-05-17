@@ -1,7 +1,7 @@
-export default async function untilEnablerIsInitialized(Enabler = window.Enabler) {
+export default async function untilEnablerIsInitialized() {
   return new Promise(resolve => {
-    if (!Enabler.isInitialized()) {
-      Enabler.addEventListener(studio.events.StudioEvent.INIT, resolve);
+    if (!window.Enabler.isInitialized()) {
+      window.Enabler.addEventListener(studio.events.StudioEvent.INIT, resolve);
     } else {
       resolve();
     }

@@ -4,11 +4,14 @@ import Events from '../../event/Events';
 
 let prom = null;
 
+/**
+ *
+ * @return {null}
+ */
 export default function getEventDispatcher(){
   if(!prom){
 
     const eventDispatcher = new EventDispatcher();
-
 
     prom = getEnabler().then(Enabler => {
       const se = studio.events.StudioEvent;
@@ -65,6 +68,8 @@ export default function getEventDispatcher(){
       Enabler.addEventListener(se.FULLSCREEN_EXPAND_FINISH, () => eventDispatcher.dispatchEvent(Events.FULLSCREEN_EXPAND_FINISH));
       Enabler.addEventListener(se.FULLSCREEN_EXPAND_START, () => eventDispatcher.dispatchEvent(Events.FULLSCREEN_EXPAND_START));
     })
+
+    prom = prom.then(() => eventDispatcher);
   }
 
   return prom;

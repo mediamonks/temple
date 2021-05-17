@@ -1,5 +1,5 @@
-import loadScript from '../loadScript';
-import getEnabler from '../getEnabler';
+import loadScript from '../util/loadScript';
+import getEnabler from '../util/getEnabler';
 
 export default function untilEnablerIsInitialized() {
 

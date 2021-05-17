@@ -1,4 +1,4 @@
-import getEnabler from '../getEnabler';
+import getEnabler from '../util/getEnabler';
 
 let prom = null;
 /**

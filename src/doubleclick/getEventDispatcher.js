@@ -1,6 +1,6 @@
-import getEnabler from '../getEnabler';
-import EventDispatcher from '../../event/EventDispatcher';
-import Events from '../../event/Events';
+import getEnabler from '../util/getEnabler';
+import EventDispatcher from '../event/EventDispatcher';
+import Events from './Events';
 
 let prom = null;
 

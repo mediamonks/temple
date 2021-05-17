@@ -1,7 +1,12 @@
 let prom = null;
 
 export default function getEnabler() {
+  if(window.Enabler){
+    prom = Promise.resolve(window.Enabler);
+  }
+
   if (!prom) {
+
     prom = new Promise((resolve, reject) => {
       const limit = 100;
       let count = 0;

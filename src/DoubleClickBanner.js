@@ -3,20 +3,14 @@
  */
 import DoubleClickPlatform from './event/DoubleClickPlatform';
 import inlineSvg from './util/inlineSvg';
+import untilEnablerIsInitialized from './util/doubleclick/untilEnablerIsInitialized';
 
 export default class DoubleClickBanner {
-  _platform = new DoubleClickPlatform();
-  _dispose = [];
-
   /**
    *
    * @param {HTMLElement} container
    */
-  constructor(container) {
-    this._dispose.push(
-      this._platform.addEventListener(DoubleClickPlatform.INIT, () => this.init()),
-    );
-    this.container = container;
+  constructor() {
   }
 
   /**
@@ -24,12 +18,8 @@ export default class DoubleClickBanner {
    * @return {Promise<void>}
    */
   async init() {
-    // will inline svg elements with attribute svg or inline
-    await inlineSvg(this.container);
+    await untilEnablerIsInitialized();
+
   }
 
-  destruct() {
-    // removes all event listeners
-    this._dispose.forEach(disposable => disposable.dispose());
-  }
 }

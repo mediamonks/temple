@@ -1,15 +1,25 @@
-/* eslint-disable no-undef */
-
 let prom = null;
 
 export default function getEnabler() {
+  if(window.Enabler){
+    prom = Promise.resolve(window.Enabler);
+  }
+
   if (!prom) {
-    prom = new Promise(resolve => {
+
+    prom = new Promise((resolve, reject) => {
+      const limit = 100;
+      let count = 0;
+
       const checkLoop = function() {
-        if (Enabler) {
-          resolve(Enabler);
+        if (count > limit) {
+          reject(new Error('Enabler not found'));
+        }
+        if (window.Enabler) {
+          resolve(window.Enabler);
         } else {
-          setTimeout(checkLoop, 500);
+          count++;
+          setTimeout(checkLoop, 100);
         }
       };
 

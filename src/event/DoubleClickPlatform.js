@@ -36,7 +36,7 @@ export default class DoubleClickPlatform extends EventDispatcher {
    */
   init() {
     if (this._init) {
-      this._init = getEnabler()
+      this._init = this.loadEnabler()
         .then(Enabler => {
           return new Promise(resolve => {
             if (!Enabler.isInitialized()) {

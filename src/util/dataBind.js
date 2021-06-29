@@ -72,7 +72,7 @@ function updateElement(type, val, element) {
 
     case 'href':
     case 'src': {
-      element[data.type] = val;
+      element[type] = val;
       break;
     }
 

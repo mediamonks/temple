@@ -14,7 +14,7 @@ function getObject(str) {
 
 function getValue(model, path) {
   path.forEach(item => {
-    if (model[item]) {
+    if (model.hasOwnProperty(item)) {
       model = model[item];
     }
   });

@@ -10,6 +10,7 @@ export default function loadImage(src) {
       resolve(this);
     };
     img.onerror = reject;
+    img.dataset.src = src;
     img.src = src;
   });
 }

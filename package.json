@@ -1,6 +1,6 @@
 {
   "name": "@mediamonks/temple",
-  "version": "6.1.3",
+  "version": "6.1.4",
   "description": "This is the Display Advertising Temple, used for creating Display Advertising Units for various vendors.",
   "scripts": {
     "prepublishOnly": "npm-run-all -s validate build",

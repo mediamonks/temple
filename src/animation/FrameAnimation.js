@@ -71,6 +71,8 @@ export default class FrameAnimation {
         }
       }
     }
+    //add an onStart event for the QA gsdevtools debugger in the preview page
+    timeline.eventCallback("onStart", this.timelineOnStartHandler)
 
     return timeline;
   }
@@ -86,6 +88,10 @@ export default class FrameAnimation {
     }
 
     return this.__timeline;
+  }
+
+  timelineOnStartHandler() {
+    window.dispatchEvent(new CustomEvent("getMainTimeline", {'detail': this}));
   }
 
   /**
